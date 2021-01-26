@@ -1,0 +1,28 @@
+AddDefaultCharset UTF-8
+
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/admin
+RewriteRule ^.*$ http://innovationfund.in/admin/news [R=301,L]
+RewriteRule ^innovations/([0-9]+)/? innovations.php?innovation_id=$1 [QSA,L]
+
+# BEGIN WordPress
+
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+
+# END WordPress
+
+# protect xmlrpc
+
+Order Deny,Allow
+Deny from all
+
+
+# protect wp-cron
+
+Order Deny,Allow
+Deny from all
