@@ -1,0 +1,44 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 8px 20px;
+  text-align: center;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 2em;
+  font-weight: $fw-bold;
+  font-size: inherit;
+  letter-spacing: $ls-wide;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &_outline {
+    background: transparent;
+    &_yellow {
+      color: $color-8;
+      border-color: $color-8;
+      &:hover {
+        background-color: $color-8;
+      }
+    }
+  }
+
+  &_filled {
+    &_blue {
+      background-color: $color-2;
+      border-color: $color-2;
+      &:hover {
+        background-color: transparent;
+        border-color: $color-2;
+        color: $color-2;
+      }
+    }
+  }
+}
