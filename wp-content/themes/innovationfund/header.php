@@ -95,10 +95,10 @@
     <?php endif ?>
 
     <div class="header-bottom header-bottom_home">
-        <div class="header-logo">
+        <a class="header-logo" href="<?php home_url() ?>">
             <img class="header-logo__img" src="<?php echo get_template_directory_uri() ?>/dist/img/logo-text-w.png"
                  alt="Fund of Innovation Support logo">
-        </div>
+        </a>
 
         <nav class="header-menu">
             <ul class="header-list">
