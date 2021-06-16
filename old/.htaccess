@@ -1,0 +1,17 @@
+AddDefaultCharset UTF-8
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^.]+)$ $1.php [NC,L]
+
+DirectoryIndex public/index.php
+
+RewriteCond  %{DOCUMENT_ROOT}/public/$1 -f
+RewriteRule ^(.*)$ public/$1 [L,QSA]
+
+RewriteCond %{REQUEST_URI} ^/admin
+RewriteRule ^.*$ http://innovationfund.in/admin/news [R=301,L]
+
+RewriteRule ^innovations/([0-9]+)/? innovations.php?innovation_id=$1 [QSA,L]
+
+ErrorDocument 404 /err404.php

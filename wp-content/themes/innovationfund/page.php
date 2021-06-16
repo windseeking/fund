@@ -1,543 +1,366 @@
-<?php
-/**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package innovationfund
- */
+<?php get_header(); ?>
 
-require_once('init.php');
-
-get_header();
-?>
-
-	<section class="bg-white" style="min-height: 100vh; position: relative">
-    <div class="container-slider">
-        <div data-am-fadeshow="next-prev-navigation">
-
-            <!-- Radio -->
-            <input type="radio" name="css-fadeshow" id="slide-1">
-            <input type="radio" name="css-fadeshow" id="slide-2">
-            <input type="radio" name="css-fadeshow" id="slide-3">
-            <input type="radio" name="css-fadeshow" id="slide-4">
-
-            <!-- Slides -->
-            <div class="fs-slides">
-                <div class="fs-slide" id="slider-bg-1">
-                    <div class="slider-bg">
-                        <img src="<?php echo get_template_directory_uri(); ?>/<?php the_field('logo'); ?>" width="100" height="100" alt="">
-                        <h1 class="xs-hide sm-hide display-3 font-weight-bold"><?php the_field('slider_1_header'); ?></h1>
-                        <h2 class="md-hide lg-hide xl-hide font-weight-bold"><?php the_field('slider_1_header'); ?></h2>
-                        <hr class="yellow short-center">
-                        <p class="lead"><?php the_field('slider_1_par'); ?></p>
-                    </div>
+        <div class="full-width about" id="about"> <!-- о фонде -->
+            <div class="inner">
+                <div class="cat-title">О Фонде</div>
+                <div class="title">
+                    Фонд Поддержки Инноваций
                 </div>
-
-                <div class="fs-slide" id="slider-bg-2">
-                    <div class="slider-bg">
-                        <img src="img/onu.png" width="100" height="100" alt="">
-                        <h1 class="xs-hide sm-hide font-weight-bold"><?= $slider_header_2; ?></h1>
-                        <h2 class="md-hide lg-hide xl-hide font-weight-bold"><?= $slider_header_2; ?></h2>
-                        <hr class="yellow short-center">
-                        <p class="lead"><?= $slider_paragraph_2; ?></p>
-                    </div>
+                <div class="subtitle">
+                    – это студенческий стартап, созданный для:
                 </div>
-
-                <div class="fs-slide" id="slider-bg-3">
-                    <div class="slider-bg">
-                        <h1 class="xs-hide sm-hide font-weight-bold"><?= $slider_header_3; ?></h1>
-                        <h2 class="md-hide lg-hide xl-hide font-weight-bold"><?= $slider_header_3; ?></h2>
-                        <hr class="yellow short-center">
-                        <p class="lead"><?= $slider_paragraph_3; ?></p>
-                    </div>
-                </div>
-
-                <div class="fs-slide" id="slider-bg-4">
-                    <div class="slider-bg">
-                        <h1 class="xs-hide sm-hide font-weight-bold"><?= $slider_header_4; ?></h1>
-                        <h2 class="md-hide lg-hide xl-hide font-weight-bold"><?= $slider_header_4; ?></h2>
-                        <hr class="yellow short-center">
-                        <p class="lead"><?= $slider_paragraph_4; ?></p>
+                <div class="content">
+                    <div class="wisiwyg-wrap">
+                        &#8203;
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <h4>01</h4>
+                                    <span>кооперации бизнеса и университета</span></td>
+                                <td>
+                                    <h4>02</h4>
+                                    <span>развития и внедрения<br> инноваций</span></td>
+                                <td>
+                                    <h4>03</h4>
+                                    <span>развития бизнеса путем внедрения технологий</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
+        </div> <!-- о фонде -->
 
-            <!-- Quick Navigation -->
-            <div class="fs-quick-nav">
-                <label class="fs-quick-btn" for="slide-1"></label>
-                <label class="fs-quick-btn" for="slide-2"></label>
-                <label class="fs-quick-btn" for="slide-3"></label>
-                <label class="fs-quick-btn" for="slide-4"></label>
-            </div>
-
-            <!-- Prev Navigation -->
-            <div class="fs-prev-nav">
-                <label class="fs-prev-btn" for="slide-1"></label>
-                <label class="fs-prev-btn" for="slide-2"></label>
-                <label class="fs-prev-btn" for="slide-3"></label>
-                <label class="fs-prev-btn" for="slide-4"></label>
-            </div>
-
-            <!-- Next Navigation -->
-            <div class="fs-next-nav">
-                <label class="fs-next-btn" for="slide-1"></label>
-                <label class="fs-next-btn" for="slide-2"></label>
-                <label class="fs-next-btn" for="slide-3"></label>
-                <label class="fs-next-btn" for="slide-4"></label>
-            </div>
-        </div>
-    </div>
-</section><!--End Sliders -->
-
-<!-- ======= About ======= -->
-<section style="min-height: 100vh;" id="about" class="about bg-light shadowed-inset">
-    <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-            <h1><?= $about; ?></h1>
-        </div>
-
-        <hr class="yellow short-center mb-5">
-
-        <div class="row">
-            <div class="col-10">
-                <h3><?= $fund_name ?></h3>
-                <?= $fund_definition ?>
-            </div>
-        </div>
-
-        <div class="row numbered-list justify-content-between mb-5">
-            <div class="col-10 col-md-3">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/number-outline-blue-1.svg" alt="">
-                <p><?= $purpose_1 ?></p>
-            </div>
-            <div class="col-10 col-md-3">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/number-outline-blue-2.svg" alt="">
-                <p><?= $purpose_2 ?></p>
-            </div>
-            <div class="col-10 col-md-3">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/number-outline-blue-3.svg" alt="">
-                <p><?= $purpose_3 ?></p>
-            </div>
-        </div>
-
-        <div class="row content justify-content-between">
-            <div class="col-10 col-lg-6 mb-5 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
-                <h3 class="mb-5"><?= $mission_header; ?></h3>
-                <p class="boxed">
-                    <?= $mission_paragraph; ?>
-                </p>
-            </div>
-
-            <div class="col-10 col-lg-4" data-aos="fade-up" data-aos-delay="150">
-                <h3 class="mb-5"><?= $principles_header; ?></h3>
-                <div class="row">
-                    <div class="col-6 col-md-3 col-lg-6 text-center mx-auto mb-5">
-                        <div class="icon-principles icon-transparency mx-auto mb-3"></div>
-                        <p class="font-weight-bold text-center"><?= $transparency; ?></p>
-                    </div>
-                    <div class="col-6 col-md-3 col-lg-6 text-center mx-auto mb-5">
-                        <div class="icon-principles icon-openness mx-auto mb-3"></div>
-                        <p class="font-weight-bold text-center"><?= $openness; ?></p>
-                    </div>
-                    <div class="col-6 col-md-3 col-lg-6 text-center mx-auto mb-5">
-                        <div class="icon-principles icon-officiality mx-auto mb-3"></div>
-                        <p class="font-weight-bold text-center"><?= $officiality; ?></p>
-                    </div>
-                    <div class="col-6 col-md-3 col-lg-6 text-center">
-                        <div class="icon-principles icon-goals mx-auto mb-3"></div>
-                        <p class="font-weight-bold text-center"><?= $goals; ?></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section><!-- End About -->
-
-<!-- ======= Work ======= -->
-<section class="work" id="work" style="min-height: 100vh">
-    <div class="container">
-        <div class="section-title" data-aos="fade-up">
-            <h1><?= $work_header ?></h1>
-        </div>
-
-        <hr class="yellow short-center mb-5">
-
-        <div class="row justify-content-around px-5 mb-5">
-            <div id="step-1" class="col-md-5 workstep d-flex align-items-stretch">
-                <div class="card" data-aos="fade-up"
-                     data-aos-delay="100">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $step_1_title ?></h5>
-                        <p class="card-text"><?= $step_1_paragraph ?></p>
-                    </div>
-                </div>
-            </div>
-            <div id="step-2" class="col-md-5 workstep d-flex align-items-stretch mt-4 mt-md-0">
-                <div class="card" data-aos="fade-up"
-                     data-aos-delay="200">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $step_2_title ?></h5>
-                        <p class="card-text"><?= $step_2_paragraph ?></p>
-                    </div>
-                </div>
-
-            </div>
-            <div id="step-3" class="col-md-5 workstep d-flex align-items-stretch mt-4">
-                <div class="card" data-aos="fade-up"
-                     data-aos-delay="100">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $step_3_title ?></h5>
-                        <p class="card-text"><?= $step_3_paragraph ?></p>
-                    </div>
-                </div>
-            </div>
-            <div id="step-4" class="col-md-5 workstep d-flex align-items-stretch mt-4">
-                <div class="card" data-aos="fade-up"
-                     data-aos-delay="200">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $step_4_title ?></h5>
-                        <p class="card-text"><?= $step_4_paragraph ?></p>
-                    </div>
-                </div>
-            </div>
-            <div id="step-5" class="col-md-5 workstep d-flex align-items-stretch mt-4">
-                <div class="card" data-aos="fade-up"
-                     data-aos-delay="200">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $step_5_title ?></h5>
-                        <p class="card-text"><?= $step_5_paragraph ?></p>
-                    </div>
-                </div>
-            </div>
-            <div id="step-6" class="col-md-5 workstep d-flex align-items-stretch mt-4">
-                <div class="card" data-aos="fade-up"
-                     data-aos-delay="200">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $step_6_title ?></h5>
-                        <p class="card-text"><?= $step_6_paragraph ?></p>
-                    </div>
-                </div>
-            </div>
-            <div id="step-7" class="col-md-11 workstep d-flex align-items-stretch mx-auto mt-4">
-                <div class="card" data-aos="fade-up"
-                     data-aos-delay="200">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $step_7_title ?></h5>
-                        <p class="card-text"><?= $step_7_paragraph ?></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!--<div class="row work-border justify-content-around py-3">
-            <div class="col-5 work-card pr-3">
-                <div class="p-4">
-                    <h3>Интерес</h3>
-                    <p>Вас заинтересовала та или иная отрасль в университете</p>
-                </div>
-            </div>
-
-            <div class="col-5 work-card">
-                <div class="p-4">
-                    <h3>Запрос</h3>
-                    <p>Вы рассказываете подробнее, как видите сотрудничество, или же мы предлагаем
-                        варианты</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row work-border justify-content-around py-3">
-            <div class="col-5 work-card pr-3">
-                <div class="p-4">
-                    <h3>План</h3>
-                    <p>Вместе с Вами (а в некоторых случаях и с университетом) мы прописываем дорожную
-                        карту работы</p>
-                </div>
-            </div>
-
-            <div class="col-5 work-card">
-                <div class="p-4">
-                    <h3>Соглашения</h3>
-                    <p>Мы подписываем договор с Вами и университетом, к которому прикрепляются ТЗ и
-                        дополнительные документы, если таковые имеются</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row work-border justify-content-around py-3">
-            <div class="col-5 work-card pr-3">
-                <div class="p-4">
-                    <h3>Реализация</h3>
-                    <p>Мы начинаем сотрудничество</p>
-                </div>
-            </div>
-
-            <div class="col-5 work-card">
-                <div class="p-4">
-                    <h3>Результат</h3>
-                    <p>Вы получаете результат, а университет применяет и развивает инновации, делает
-                        образование и науку практичнее, чтобы в следующий раз предоставить Вам еще более
-                        качественный продукт</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row work-border justify-content-center py-3">
-            <div class="col-5 work-card mx-auto pr-3">
-                <div class="p-4">
-                    <h3>Lorem ipsum dolor sit amet</h3>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate</p>
-                </div>
-            </div>
-        </div>-->
-
-    </div>
-</section>
-
-<!-- ======= Innovations ======= -->
-<section id="innovations" class="more-services bg-light shadowed-inset">
-    <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-            <h1><?= $innovations_header ?></h1>
-        </div>
-
-        <hr class="yellow short-center mb-5">
-
-        <div class="row mb-5">
-            <div class="col-md-6 d-flex align-items-stretch">
-                <div class="card" style='background-image: url("<?php echo get_template_directory_uri(); ?>/img/greenhouse.jpg");' data-aos="fade-up"
-                     data-aos-delay="100">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="innovations/19">Автоматическая теплица</a></h5>
-                        <p class="card-text">Создание полностью автоматических теплиц для более эффективного выращивания
-                            растений без участия человека.</p>
-                        <div class="read-more"><a href="innovations/19"><i
-                                        class="icofont-arrow-right"></i> <?= $btn_more ?></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-                <div class="card" style='background-image: url("<?php echo get_template_directory_uri(); ?>/img/frenel.jpg");' data-aos="fade-up"
-                     data-aos-delay="200">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="innovations/2">Концентратор солнечной энергии на основе
-                                зеркал Френеля</a>
-                        </h5>
-                        <p class="card-text">Концентратор солнечной энергии на основе зеркал Френеля позволяет
-                            одновременно производить нагрев воды (получение горячей воды для бытовых нужд) и
-                            электроэнергию путем установки солнечных панелей.</p>
-                        <div class="read-more"><a href="innovations/2"><i
-                                        class="icofont-arrow-right"></i> <?= $btn_more ?></a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-6 d-flex align-items-stretch mt-4">
-                <div class="card" style='background-image: url("<?php echo get_template_directory_uri(); ?>/img/wheat.jpg");' data-aos="fade-up"
-                     data-aos-delay="100">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="innovations/5">Новое комплексное удобрение для выращивания
-                                озимой пшеницы</a>
-                        </h5>
-                        <p class="card-text">Разработка предназначена для повышения устойчивости к неблагоприятным
-                            условиям, урожайности и жизнеспособности озимой пшеницы.</p>
-                        <div class="read-more"><a href="innovations/5"><i
-                                        class="icofont-arrow-right"></i> <?= $btn_more ?></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 d-flex align-items-stretch mt-4">
-                <div class="card" style='background-image: url("<?php echo get_template_directory_uri(); ?>/img/burners.png ");' data-aos="fade-up"
-                     data-aos-delay="200">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="innovations/21">Инновационная горелка для жидких видов
-                                топлива</a></h5>
-                        <p class="card-text">Инновационная горелка для сжигания мазута или отработанного масла с водой в
-                            пропорции 30/70 (70%) воды.</p>
-                        <div class="read-more"><a href="innovations/21">
-                                <i class="icofont-arrow-right"></i> <?= $btn_more ?></a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 col-lg-2 mx-auto">
-                <a href="/innovations" class="btn-custom btn-custom-outline-yellow btn-block"><?= $btn_all ?></a>
-            </div>
-        </div>
-</section><!-- End Innovations -->
-
-<!-- ======= Team ======= -->
-<section style="min-height: 100vh;" id="team" class="team">
-    <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-            <h1><?= $team_header ?></h1>
-        </div>
-
-        <hr class="yellow short-center mb-5">
-
-        <div class="row mb-5">
-
-            <div class="col-lg-4 col-xs-10 col-md-4 mb-5 d-flex align-items-stretch">
-                <div class="member mx-auto" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/chernetsky.jpg" class="img-fluid" alt="" width="400px">
-                        <div class="social">
-                            <a href="https://www.facebook.com/o.tchernetsky"><i class="icofont-facebook"></i></a>
-                            <a href="https://www.instagram.com/chernetskyalex/"><i class="icofont-instagram"></i></a>
-                            <a href="https://www.linkedin.com/in/%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9-%D1%87%D0%B5%D1%80%D0%BD%D0%B5%D1%86%D0%BA%D0%B8%D0%B9-81b140149/"><i
-                                        class="icofont-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h4><?= $alex ?></h4>
-                        <span><?= $lawyer ?></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-xs-10 col-md-4 mb-5 d-flex align-items-stretch">
-                <div class="member mx-auto" data-aos="fade-up" data-aos-delay="200">
-                    <div class="member-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/koyen.jpg" class="img-fluid" alt="" width="400px">
-                        <div class="social">
-                            <a target="_blank" href="https://www.facebook.com/pavelkoyen"><i class="icofont-facebook"></i></a>
-                            <a target="_blank" href="https://www.instagram.com/pavelkoyen/"><i class="icofont-instagram"></i></a>
-                            <a target="_blank" href="https://www.linkedin.com/in/pavelkoyen/"><i class="icofont-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h4><?= $pavel ?></h4>
-                        <span><?= $founder ?></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-xs-10 col-md-4 mb-5 d-flex align-items-stretch">
-                <div class="member mx-auto" data-aos="fade-up" data-aos-delay="300">
-                    <div class="member-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/dolzhenko.jpg" class="img-fluid" alt="" width="400px">
-                        <div class="social">
-                            <a href="https://www.facebook.com/maksym.dolzhenko"><i class="icofont-facebook"></i></a>
-                            <a href="https://www.linkedin.com/in/maksymdolzhenko/"><i class="icofont-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h4><?= $maksym ?></h4>
-                        <span><?= $advisor ?></span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-12 col-md-6 mx-auto text-center">
-                <div class="icon-plus mx-auto mb-3"></div>
-                <p class="lead">17.000+ студентов и 3.000+ сотрудников</p>
-            </div>
-        </div>
-
-    </div>
-</section><!-- End Team Section -->
-
-<!-- ======= Docs ======= -->
-<section id="docs" class="services bg-light shadowed-inset">
-    <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-            <h1><?= $docs_header ?></h1>
-        </div>
-
-        <hr class="yellow short-center mb-5">
-
-        <div class="row">
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon"><i class="bx bx-file"></i></div>
-                    <h4 class="title"><a href="../docs/FIS_presentation.pdf" target="_blank"><?= $university_profile ?></a>
-                    </h4>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon"><i class="bx bx-file"></i></div>
-                    <h4 class="title"><a href="../docs/FIS_presentation.pdf" target="_blank"><?= $our_presentation ?></a>
-                    </h4>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                    <div class="icon"><i class="bx bx-file"></i></div>
-                    <h4 class="title"><a href="../docs/Statut_ONU.pdf" target="_blank"><?= $onu_statute ?></a></h4>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon"><i class="bx bx-file"></i></div>
-                    <h4 class="title"><a href="../docs/Statut_FIS.docx" target="_blank"><?= $fis_statute ?></a></h4>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</section><!-- End Docs  -->
-
-<!-- ======= Contact ======= -->
-<section style="min-height: 100vh;" id="contact" class="bg-white py-5 px-3" style="min-height: 100vh">
-    <div class="container-fluid mt-5">
-        <div class="row">
-            <div class="col-12 col-md-11 mx-auto">
-                <div class="row">
-                    <div class="col-12 mb-3">
-                        <h1><?= $contact_us; ?></h1>
-                        <hr class="red long-left">
-                    </div>
-
-                    <div class="col-12 col-md-7 mb-5 mb-md-0 justify-content-between">
-                        <?php
-                        require ("template-parts/contact.php");
-                        ?>
-                    </div>
-
-                    <div class="col-12 col-md-4 text-center text-md-left ml-auto">
-                        <address>
-                            <strong><?= $fund_name; ?></strong>
-                            <br><?= $address; ?>
-                        </address>
-                        <address>
-                            <p><?= $label_phone; ?>:
-                                <br><a href="tel:+380995250511">+380 99 525 05 11</a>
+        <div class="full-width block-two-column block-two-column-border-top mission"> <!-- миссия и принципы -->
+            <div class="inner">
+                <div class="column">
+                    <div class="two-column-item">
+                        <div class="title-column">Миссия</div>
+                        <div class="description">
+                            <p>
+                                Развитие экономики путем установления отношений между бизнесом, наукой и образованием.
                             </p>
-                            <p>E-mail:
-                                <br><a href="mailto:innovationfund@onu.edu.ua">innovationfund@onu.edu.ua</a>
-                            </p>
-                        </address>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="two-column-item">
+                        <div class="title-column">Принципы</div>
+                        <div class="description">
+                            <ul>
+                                <li>Прозрачность</li>
+                                <li>Открытость</li>
+                                <li>Официальность</li>
+                                <li>Высокие цели</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- миссия и принципы -->
+
+        <div class="full-width work"> <!-- как мы работаем -->
+            <div class="inner">
+                <div class="cat-title">Как мы работаем</div>
+                <div class="content px-5">
+                    <div class="wisiwyg-wrap">
+                        &#8203;
+                        <table class="roadmap">
+                            <tbody>
+                            <tr class="step-1">
+                                <th>
+                                    <h4>01</h4>
+                                </th>
+                                <td>
+                                    <div class="title">
+                                        Интерес
+                                    </div>
+                                    <div class="subtitle">
+                                        Вас заинтересовала те или иные отрасли, проекты или разработки университета
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="step-2">
+                                <th>
+                                    <h4>02</h4>
+                                </th>
+                                <td>
+                                    <div class="title">
+                                        Запрос
+                                    </div>
+                                    <div class="subtitle">
+                                        Вы рассказываете подробнее, как видите сотрудничество, или же мы предлагаем
+                                        варианты
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="step-3">
+                                <th>
+                                    <h4>03</h4>
+                                </th>
+                                <td>
+                                    <div class="title">
+                                        Одобрение
+                                    </div>
+                                    <div class="subtitle">
+                                        Мы проверяем техническую возможность университета выполнить задачу
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="step-4">
+                                <th>
+                                    <h4>04</h4>
+                                </th>
+                                <td>
+                                    <div class="title">
+                                        План
+                                    </div>
+                                    <div class="subtitle">
+                                        Вместе с Вами (а в некоторых случаях и с университетом) мы прописываем
+                                        дорожную
+                                        карту
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="step-5">
+                                <th>
+                                    <h4>05</h4>
+                                </th>
+                                <td>
+                                    <div class="title">
+                                        Соглашения
+                                    </div>
+                                    <div class="subtitle">
+                                        Мы подписываем договор с Вами и университетом, к которому прикрепляются ТЗ и
+                                        дополнительные документы, если таковые имеются
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="step-6">
+                                <th>
+                                    <h4>06</h4>
+                                </th>
+                                <td>
+                                    <div class="title">
+                                        Реализация
+                                    </div>
+                                    <div class="subtitle">
+                                        Мы приступаем к реализации согласованного плана, закреплённого документами
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="step-7">
+                                <th>
+                                    <h4>07</h4>
+                                </th>
+                                <td>
+                                    <div class="title">
+                                        Результат
+                                    </div>
+                                    <div class="subtitle">
+                                        Вы получаете результат, а университет применяет и развивает инновации,
+                                        делает
+                                        образование и науку практичнее, чтобы в следующий раз предоставить Вам еще
+                                        более
+                                        качественный продукт
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div> <!-- как мы работаем -->
+
+        <div class="full-width team pt-5"> <!-- команда -->
+            <div class="leadership-item mx-auto">
+                <div class="leadership-img"><img src="<?php echo get_template_directory_uri() ?>/dist/img/koyen.jpg" alt=""></div>
+                <div class="leadership-description-wrapper">
+                    <div class="leadership-name">Павел Коен</div>
+                    <div class="leadership-position">Основатель и глава</div>
+                </div>
+            </div>
+
+            <div class="leadership-item mx-auto">
+                <div class="leadership-img"><img src="<?php echo get_template_directory_uri() ?>/dist/img/chernetsky.jpg" alt=""></div>
+                <div class="leadership-description-wrapper">
+                    <div class="leadership-name">Алексей Чернецкий</div>
+                    <div class="leadership-position">Юрист</div>
+                </div>
+            </div>
+
+            <div class="leadership-item mx-auto">
+                <div class="leadership-img"><img src="<?php echo get_template_directory_uri() ?>/dist/img/dolzhenko.jpg" alt=""></div>
+                <div class="leadership-description-wrapper">
+                    <div class="leadership-name">Максим Долженко</div>
+                    <div class="leadership-position">Бизнес-консультант</div>
+                </div>
+            </div>
+        </div> <!-- о фонде -->
+
+        <div class="full-width block-two-column block-two-column-border-top bg-gray contact" id="contact">
+            <!-- миссия и принципы -->
+            <div class="inner">
+                <div class="column">
+                    <div class="two-column-item">
+                        <div class="cat-title">Обратная связь</div>
+                        <?php require("template-parts/contact.php") ?>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="two-column-item">
+                        <div>
+                            <p class="title">Фонд Поддержки Инноваций</p>
+                            <div class="phone">
+                                <a href="tel:+380995250511">
+                                    +380 99 525 05 11
+                                </a>
+                                <a href="mailto:innovationfund@onu.edu.ua">
+                                    innovationfund@onu.edu.ua
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="messengers">
+                            <a href="https://t.me/pavelkoyen" target="_blank" class="hide-mobile">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="30" height="30" x="0"
+                                     y="0"
+                                     viewBox="0 0 512.00011 512" style="enable-background:new 0 0 512 512"
+                                     xml:space="preserve"
+                                     class=""><g>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                              d="m504.09375 11.859375c-6.253906-7.648437-15.621094-11.859375-26.378906-11.859375-5.847656 0-12.042969 1.230469-18.410156 3.664062l-433.398438 165.441407c-23 8.777343-26.097656 21.949219-25.8984375 29.019531s4.0390625 20.046875 27.4999995 27.511719c.140626.042969.28125.085937.421876.125l89.898437 25.726562 48.617187 139.023438c6.628907 18.953125 21.507813 30.726562 38.835938 30.726562 10.925781 0 21.671875-4.578125 31.078125-13.234375l55.605469-51.199218 80.652344 64.941406c.007812.007812.019531.011718.027343.019531l.765625.617187c.070313.054688.144532.113282.214844.167969 8.964844 6.953125 18.75 10.625 28.308594 10.628907h.003906c18.675781 0 33.546875-13.824219 37.878906-35.214844l71.011719-350.640625c2.851563-14.074219.460937-26.667969-6.734375-35.464844zm-356.191406 234.742187 173.441406-88.605468-107.996094 114.753906c-1.769531 1.878906-3.023437 4.179688-3.640625 6.683594l-20.824219 84.351562zm68.132812 139.332032c-.71875.660156-1.441406 1.25-2.164062 1.792968l19.320312-78.25 35.144532 28.300782zm265.390625-344.566406-71.011719 350.644531c-.683593 3.355469-2.867187 11.164062-8.480468 11.164062-2.773438 0-6.257813-1.511719-9.824219-4.257812l-91.390625-73.585938c-.011719-.011719-.027344-.023437-.042969-.03125l-54.378906-43.789062 156.175781-165.949219c5-5.3125 5.453125-13.449219 1.074219-19.285156-4.382813-5.835938-12.324219-7.671875-18.820313-4.351563l-256.867187 131.226563-91.121094-26.070313 433.265625-165.390625c3.660156-1.398437 6.214844-1.691406 7.710938-1.691406.917968 0 2.550781.109375 3.15625.855469.796875.972656 1.8125 4.289062.554687 10.511719zm0 0"
+                                              fill="#858585" data-original="#000000" style=""/>
+                                    </g></svg>
+                            </a>
+
+                            <a href="https://www.messenger.com/t/pavelkoyen" target="_blank" class="show-mobile">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="50" height="50" x="0"
+                                     y="0"
+                                     viewBox="0 0 512.00011 512" style="enable-background:new 0 0 512 512"
+                                     xml:space="preserve"
+                                     class=""><g>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                              d="m504.09375 11.859375c-6.253906-7.648437-15.621094-11.859375-26.378906-11.859375-5.847656 0-12.042969 1.230469-18.410156 3.664062l-433.398438 165.441407c-23 8.777343-26.097656 21.949219-25.8984375 29.019531s4.0390625 20.046875 27.4999995 27.511719c.140626.042969.28125.085937.421876.125l89.898437 25.726562 48.617187 139.023438c6.628907 18.953125 21.507813 30.726562 38.835938 30.726562 10.925781 0 21.671875-4.578125 31.078125-13.234375l55.605469-51.199218 80.652344 64.941406c.007812.007812.019531.011718.027343.019531l.765625.617187c.070313.054688.144532.113282.214844.167969 8.964844 6.953125 18.75 10.625 28.308594 10.628907h.003906c18.675781 0 33.546875-13.824219 37.878906-35.214844l71.011719-350.640625c2.851563-14.074219.460937-26.667969-6.734375-35.464844zm-356.191406 234.742187 173.441406-88.605468-107.996094 114.753906c-1.769531 1.878906-3.023437 4.179688-3.640625 6.683594l-20.824219 84.351562zm68.132812 139.332032c-.71875.660156-1.441406 1.25-2.164062 1.792968l19.320312-78.25 35.144532 28.300782zm265.390625-344.566406-71.011719 350.644531c-.683593 3.355469-2.867187 11.164062-8.480468 11.164062-2.773438 0-6.257813-1.511719-9.824219-4.257812l-91.390625-73.585938c-.011719-.011719-.027344-.023437-.042969-.03125l-54.378906-43.789062 156.175781-165.949219c5-5.3125 5.453125-13.449219 1.074219-19.285156-4.382813-5.835938-12.324219-7.671875-18.820313-4.351563l-256.867187 131.226563-91.121094-26.070313 433.265625-165.390625c3.660156-1.398437 6.214844-1.691406 7.710938-1.691406.917968 0 2.550781.109375 3.15625.855469.796875.972656 1.8125 4.289062.554687 10.511719zm0 0"
+                                              fill="#858585" data-original="#000000" style=""/>
+                                    </g></svg>
+                            </a>
+
+                            <!--<a href="" target="_blank" class="hide-mobile">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="30" height="30" x="0"
+                                     y="0"
+                                     viewBox="0 0 512 512" style="enable-background:new 0 0 512 512"
+                                     xml:space="preserve"
+                                     class=""><g>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                              d="m436.847656 72.605469c-48.332031-46.820313-112.558594-72.605469-180.847656-72.605469s-132.515625 25.785156-180.847656 72.605469c-48.460938 46.945312-75.152344 109.398437-75.152344 175.855469 0 68.382812 29.191406 133.855468 80.332031 180.714843v35.042969c0 11.996094 3.640625 22.433594 10.523438 30.179688 7.128906 8.023437 17.222656 12.441406 28.417969 12.441406 6.1875 0 12.550781-1.335938 18.910156-3.96875l41.492187-17.1875c24.628907 7.457031 50.277344 11.234375 76.324219 11.234375 68.289062 0 132.515625-25.785157 180.847656-72.605469 48.460938-46.945312 75.152344-109.398438 75.152344-175.851562 0-66.457032-26.691406-128.910157-75.152344-175.855469zm-180.847656 394.3125c-24.773438 0-49.121094-3.847657-72.371094-11.4375-3.402344-1.113281-7.089844-.96875-10.398437.398437l-46.53125 19.277344c-2.660157 1.101562-5.226563 1.683594-7.425781 1.683594-7.390626 0-8.941407-6.863282-8.941407-12.621094v-41.765625c0-4.347656-1.886719-8.484375-5.171875-11.332031-47.765625-41.417969-75.160156-100.707032-75.160156-162.660156 0-120.460938 101.382812-218.460938 226-218.460938s226 98 226 218.460938c0 120.457031-101.382812 218.457031-226 218.457031zm0 0"
+                                              fill="#858585" data-original="#000000" style="" class=""/>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                              d="m394.4375 154.679688c-6.511719 0-13.882812 2.945312-23.191406 9.269531l-74.007813 50.273437-51.9375-36.949218c-9.058593-6.441407-19.5625-9.847657-30.378906-9.847657-18.28125 0-34.890625 9.609375-44.421875 25.703125l-63.839844 107.796875c-5.621094 9.488281-11.308594 21.722657-5.355468 32.164063 3.265624 5.726562 9.34375 9.148437 16.257812 9.148437 6.511719 0 13.878906-2.945312 23.191406-9.269531l74.003906-50.273438 51.933594 36.949219c9.058594 6.441407 19.566406 9.847657 30.382813 9.847657h.003906c18.277344 0 34.882813-9.605469 44.414063-25.703126l63.847656-107.796874c5.617187-9.488282 11.308594-21.722657 5.355468-32.164063-3.265624-5.726563-9.34375-9.148437-16.257812-9.148437zm-78.753906 133.824218c-4.078125 6.882813-11.03125 10.988282-18.605469 10.988282-4.550781 0-9.042969-1.484376-12.992187-4.292969l-60.4375-42.992188c-2.601563-1.851562-5.644532-2.777343-8.695313-2.777343-2.9375 0-5.882813.863281-8.429687 2.59375l-60.289063 40.953124 50.078125-84.558593c4.078125-6.882813 11.035156-10.992188 18.609375-10.992188 4.546875 0 9.039063 1.484375 12.984375 4.292969l60.441406 42.992188c5.105469 3.636718 11.9375 3.710937 17.121094.1875l60.292969-40.957032zm0 0"
+                                              fill="#858585" data-original="#000000" style="" class=""/>
+                                    </g></svg>
+                            </a>
+
+                            <a href="" target="_blank" class="show-mobile">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="50" height="50" x="0"
+                                     y="0"
+                                     viewBox="0 0 512 512" style="enable-background:new 0 0 512 512"
+                                     xml:space="preserve"
+                                     class=""><g>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                              d="m436.847656 72.605469c-48.332031-46.820313-112.558594-72.605469-180.847656-72.605469s-132.515625 25.785156-180.847656 72.605469c-48.460938 46.945312-75.152344 109.398437-75.152344 175.855469 0 68.382812 29.191406 133.855468 80.332031 180.714843v35.042969c0 11.996094 3.640625 22.433594 10.523438 30.179688 7.128906 8.023437 17.222656 12.441406 28.417969 12.441406 6.1875 0 12.550781-1.335938 18.910156-3.96875l41.492187-17.1875c24.628907 7.457031 50.277344 11.234375 76.324219 11.234375 68.289062 0 132.515625-25.785157 180.847656-72.605469 48.460938-46.945312 75.152344-109.398438 75.152344-175.851562 0-66.457032-26.691406-128.910157-75.152344-175.855469zm-180.847656 394.3125c-24.773438 0-49.121094-3.847657-72.371094-11.4375-3.402344-1.113281-7.089844-.96875-10.398437.398437l-46.53125 19.277344c-2.660157 1.101562-5.226563 1.683594-7.425781 1.683594-7.390626 0-8.941407-6.863282-8.941407-12.621094v-41.765625c0-4.347656-1.886719-8.484375-5.171875-11.332031-47.765625-41.417969-75.160156-100.707032-75.160156-162.660156 0-120.460938 101.382812-218.460938 226-218.460938s226 98 226 218.460938c0 120.457031-101.382812 218.457031-226 218.457031zm0 0"
+                                              fill="#858585" data-original="#000000" style="" class=""/>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                              d="m394.4375 154.679688c-6.511719 0-13.882812 2.945312-23.191406 9.269531l-74.007813 50.273437-51.9375-36.949218c-9.058593-6.441407-19.5625-9.847657-30.378906-9.847657-18.28125 0-34.890625 9.609375-44.421875 25.703125l-63.839844 107.796875c-5.621094 9.488281-11.308594 21.722657-5.355468 32.164063 3.265624 5.726562 9.34375 9.148437 16.257812 9.148437 6.511719 0 13.878906-2.945312 23.191406-9.269531l74.003906-50.273438 51.933594 36.949219c9.058594 6.441407 19.566406 9.847657 30.382813 9.847657h.003906c18.277344 0 34.882813-9.605469 44.414063-25.703126l63.847656-107.796874c5.617187-9.488282 11.308594-21.722657 5.355468-32.164063-3.265624-5.726563-9.34375-9.148437-16.257812-9.148437zm-78.753906 133.824218c-4.078125 6.882813-11.03125 10.988282-18.605469 10.988282-4.550781 0-9.042969-1.484376-12.992187-4.292969l-60.4375-42.992188c-2.601563-1.851562-5.644532-2.777343-8.695313-2.777343-2.9375 0-5.882813.863281-8.429687 2.59375l-60.289063 40.953124 50.078125-84.558593c4.078125-6.882813 11.035156-10.992188 18.609375-10.992188 4.546875 0 9.039063 1.484375 12.984375 4.292969l60.441406 42.992188c5.105469 3.636718 11.9375 3.710937 17.121094.1875l60.292969-40.957032zm0 0"
+                                              fill="#858585" data-original="#000000" style="" class=""/>
+                                    </g></svg>
+                            </a>-->
+
+                            <a href="https://t.me/pavelkoyen" target="_blank" class="hide-mobile">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="30" height="30" x="0"
+                                     y="0"
+                                     viewBox="0 0 512 512" style="enable-background:new 0 0 512 512"
+                                     xml:space="preserve"
+                                     class=""><g>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                              d="m349.148438 253.738281c-5.859376-5.859375-15.355469-5.859375-21.214844-.003906l-23.476563 23.476563-69.675781-69.671876 23.476562-23.476562c5.859376-5.855469 5.859376-15.355469 0-21.210938l-56.800781-56.804687c-2.8125-2.816406-6.628906-4.394531-10.605469-4.394531-3.976562 0-7.792968 1.578125-10.605468 4.394531l-62.492188 62.484375c-21.5 21.507812-21.5 56.503906.007813 78.015625l147.6875 147.691406c10.390625 10.390625 24.242187 16.109375 39.007812 16.109375s28.617188-5.71875 39.007813-16.109375l62.488281-62.484375c2.8125-2.8125 4.394531-6.625 4.394531-10.605468 0-3.980469-1.582031-7.792969-4.394531-10.605469zm-26.894532 119.285157c-4.722656 4.722656-11.042968 7.324218-17.796875 7.324218-6.753906 0-13.074219-2.601562-17.796875-7.320312l-147.683594-147.691406c-9.8125-9.8125-9.816406-25.78125-.007812-35.59375l51.882812-51.878907 35.585938 35.59375-23.472656 23.476563c-2.816406 2.8125-4.394532 6.628906-4.394532 10.605468 0 3.980469 1.578126 7.792969 4.394532 10.605469l90.886718 90.882813c5.855469 5.859375 15.351563 5.859375 21.210938.003906l23.476562-23.476562 35.59375 35.59375zm0 0"
+                                              fill="#858585" data-original="#000000" style="" class=""/>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                              d="m437.015625 74.980469c-48.351563-48.347657-112.636719-74.97656275-181.015625-74.980469-68.378906.00390625-132.667969 26.632812-181.019531 74.980469-48.351563 48.355469-74.98437525 112.640625-74.980469 181.015625 0 49.875 14.269531 97.953125 41.328125 139.496094l-20.816406 80.988281c-1.320313 5.136719.171875 10.589843 3.921875 14.339843s9.207031 5.242188 14.339844 3.921876l82.320312-21.15625c40.480469 25.152343 86.972656 38.414062 134.902344 38.414062 68.378906 0 132.667968-26.628906 181.019531-74.980469 48.355469-48.355469 74.984375-112.640625 74.984375-181.023437-.003906-68.378906-26.632812-132.664063-74.984375-181.015625zm-181.019531 407.019531c-44.300782 0-87.203125-12.828125-124.070313-37.09375-2.472656-1.628906-5.34375-2.472656-8.25-2.472656-1.246093 0-2.5.15625-3.730469.472656l-64.058593 16.464844 16.171875-62.917969c1.082031-4.207031.285156-8.679687-2.183594-12.253906-26.085938-37.792969-39.875-82.125-39.875-128.203125-.003906-60.363282 23.507812-117.113282 66.191406-159.800782 42.6875-42.683593 99.441406-66.195312 159.808594-66.195312 124.613281.003906 225.996094 101.386719 226 225.996094 0 124.617187-101.386719 226.003906-226.003906 226.003906zm0 0"
+                                              fill="#858585" data-original="#000000" style="" class=""/>
+                                    </g></svg>
+                            </a>
+
+                            <a href="https://www.messenger.com/t/pavelkoyen" target="_blank" class="show-mobile">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="50" height="50" x="0"
+                                     y="0"
+                                     viewBox="0 0 512 512" style="enable-background:new 0 0 512 512"
+                                     xml:space="preserve"
+                                     class=""><g>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                              d="m349.148438 253.738281c-5.859376-5.859375-15.355469-5.859375-21.214844-.003906l-23.476563 23.476563-69.675781-69.671876 23.476562-23.476562c5.859376-5.855469 5.859376-15.355469 0-21.210938l-56.800781-56.804687c-2.8125-2.816406-6.628906-4.394531-10.605469-4.394531-3.976562 0-7.792968 1.578125-10.605468 4.394531l-62.492188 62.484375c-21.5 21.507812-21.5 56.503906.007813 78.015625l147.6875 147.691406c10.390625 10.390625 24.242187 16.109375 39.007812 16.109375s28.617188-5.71875 39.007813-16.109375l62.488281-62.484375c2.8125-2.8125 4.394531-6.625 4.394531-10.605468 0-3.980469-1.582031-7.792969-4.394531-10.605469zm-26.894532 119.285157c-4.722656 4.722656-11.042968 7.324218-17.796875 7.324218-6.753906 0-13.074219-2.601562-17.796875-7.320312l-147.683594-147.691406c-9.8125-9.8125-9.816406-25.78125-.007812-35.59375l51.882812-51.878907 35.585938 35.59375-23.472656 23.476563c-2.816406 2.8125-4.394532 6.628906-4.394532 10.605468 0 3.980469 1.578126 7.792969 4.394532 10.605469l90.886718 90.882813c5.855469 5.859375 15.351563 5.859375 21.210938.003906l23.476562-23.476562 35.59375 35.59375zm0 0"
+                                              fill="#858585" data-original="#000000" style="" class=""/>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                              d="m437.015625 74.980469c-48.351563-48.347657-112.636719-74.97656275-181.015625-74.980469-68.378906.00390625-132.667969 26.632812-181.019531 74.980469-48.351563 48.355469-74.98437525 112.640625-74.980469 181.015625 0 49.875 14.269531 97.953125 41.328125 139.496094l-20.816406 80.988281c-1.320313 5.136719.171875 10.589843 3.921875 14.339843s9.207031 5.242188 14.339844 3.921876l82.320312-21.15625c40.480469 25.152343 86.972656 38.414062 134.902344 38.414062 68.378906 0 132.667968-26.628906 181.019531-74.980469 48.355469-48.355469 74.984375-112.640625 74.984375-181.023437-.003906-68.378906-26.632812-132.664063-74.984375-181.015625zm-181.019531 407.019531c-44.300782 0-87.203125-12.828125-124.070313-37.09375-2.472656-1.628906-5.34375-2.472656-8.25-2.472656-1.246093 0-2.5.15625-3.730469.472656l-64.058593 16.464844 16.171875-62.917969c1.082031-4.207031.285156-8.679687-2.183594-12.253906-26.085938-37.792969-39.875-82.125-39.875-128.203125-.003906-60.363282 23.507812-117.113282 66.191406-159.800782 42.6875-42.683593 99.441406-66.195312 159.808594-66.195312 124.613281.003906 225.996094 101.386719 226 225.996094 0 124.617187-101.386719 226.003906-226.003906 226.003906zm0 0"
+                                              fill="#858585" data-original="#000000" style="" class=""/>
+                                    </g></svg>
+                            </a>
+
+                            <!--<a href="" target="_blank" class="hide-mobile">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="30" height="30" x="0"
+                                     y="0"
+                                     viewBox="0 0 512 512" style="enable-background:new 0 0 512 512"
+                                     xml:space="preserve"><g>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                              d="m468.484375 180.707031c.003906-48.085937-18.84375-93.414062-53.066406-127.636719-34.222657-34.222656-79.550781-53.070312-127.640625-53.070312h-107.070313c-.003906 0-.003906 0-.003906 0-48.082031 0-93.414063 18.847656-127.632813 53.066406-34.222656 34.226563-53.070312 79.554688-53.070312 127.640625v84.164063c0 37.242187 11.359375 73.0625 32.851562 103.597656 18.960938 26.9375 44.460938 47.980469 74.191407 61.320312v48.34375c0 24.996094 13.996093 33.867188 25.980469 33.867188 8.5625 0 17.125-4.226562 25.460937-12.558594l53.859375-53.859375 75.4375-.003906c48.085938 0 93.414062-18.847656 127.636719-53.066406 34.222656-34.222657 53.070312-79.554688 53.070312-127.640625zm-180.703125 234.871094-81.648438.003906c-3.980468 0-7.792968 1.578125-10.605468 4.390625l-58.253906 58.253906c-.074219.078126-.152344.152344-.230469.226563 0-.105469 0-.214844 0-.320313v-58.355468c0-6.222656-3.839844-11.796875-9.652344-14.015625-58.25-22.226563-97.386719-78.847657-97.386719-140.890625v-84.164063c0-40.074219 15.726563-77.871093 44.28125-106.429687 28.554688-28.550782 66.347656-44.277344 106.421875-44.277344h107.070313c40.074218 0 77.871094 15.726562 106.425781 44.28125 28.558594 28.558594 44.285156 66.355469 44.28125 106.425781l.003906 84.164063c-.003906 83.101562-67.609375 150.707031-150.707031 150.707031zm0 0"
+                                              fill="#858585" data-original="#000000" style=""/>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                              d="m274.132812 245.335938c-5.855468-5.859376-15.351562-5.859376-21.210937 0l-12.117187 12.113281-46.953126-46.949219 12.117188-12.113281c2.8125-2.8125 4.394531-6.628907 4.394531-10.609375 0-3.976563-1.582031-7.792969-4.394531-10.605469l-56.804688-56.804687c-2.8125-2.8125-6.625-4.394532-10.605468-4.394532-3.976563 0-7.792969 1.582032-10.605469 4.394532l-39.765625 39.765624c-21.503906 21.503907-21.503906 56.5.003906 78.015626l124.964844 124.972656c10.390625 10.386718 24.246094 16.105468 39.007812 16.105468 14.765626 0 28.621094-5.71875 39.011719-16.105468l39.765625-39.761719c2.8125-2.816406 4.394532-6.628906 4.394532-10.609375 0-3.976562-1.582032-7.792969-4.394532-10.605469zm-4.171874 96.566406c-4.722657 4.722656-11.042969 7.324218-17.796876 7.324218-6.753906 0-13.074218-2.601562-17.796874-7.324218l-124.960938-124.96875c-9.8125-9.8125-9.816406-25.78125-.003906-35.589844l29.15625-29.160156 35.589844 35.59375-12.117188 12.113281c-2.8125 2.8125-4.394531 6.628906-4.394531 10.605469 0 3.980468 1.582031 7.792968 4.394531 10.609375l68.164062 68.164062c5.859376 5.855469 15.355469 5.859375 21.214844 0l12.117188-12.113281 35.589844 35.589844zm0 0"
+                                              fill="#858585" data-original="#000000" style=""/>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                              d="m237.882812 66.355469c-8.285156 0-15 6.714843-15 15 0 8.28125 6.714844 15 15 15 34.328126 0 66.605469 13.367187 90.878907 37.644531 24.277343 24.273438 37.644531 56.546875 37.644531 90.878906 0 8.28125 6.714844 15 15 15 8.28125 0 15-6.714844 15-15 0-42.34375-16.488281-82.152344-46.429688-112.09375-29.941406-29.941406-69.75-46.429687-112.09375-46.429687zm0 0"
+                                              fill="#858585" data-original="#000000" style=""/>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                              d="m302.140625 224.875c0 8.28125 6.71875 15 15 15 8.285156 0 15-6.71875 15-15 0-51.972656-42.285156-94.253906-94.257813-94.253906-8.285156 0-15 6.714844-15 15s6.714844 15 15 15c35.433594 0 64.257813 28.824218 64.257813 64.253906zm0 0"
+                                              fill="#858585" data-original="#000000" style=""/>
+                                    </g></svg>
+                            </a>
+
+                            <a href="" target="_blank" class="show-mobile">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="50" height="50" x="0"
+                                     y="0"
+                                     viewBox="0 0 512 512" style="enable-background:new 0 0 512 512"
+                                     xml:space="preserve"><g>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                              d="m468.484375 180.707031c.003906-48.085937-18.84375-93.414062-53.066406-127.636719-34.222657-34.222656-79.550781-53.070312-127.640625-53.070312h-107.070313c-.003906 0-.003906 0-.003906 0-48.082031 0-93.414063 18.847656-127.632813 53.066406-34.222656 34.226563-53.070312 79.554688-53.070312 127.640625v84.164063c0 37.242187 11.359375 73.0625 32.851562 103.597656 18.960938 26.9375 44.460938 47.980469 74.191407 61.320312v48.34375c0 24.996094 13.996093 33.867188 25.980469 33.867188 8.5625 0 17.125-4.226562 25.460937-12.558594l53.859375-53.859375 75.4375-.003906c48.085938 0 93.414062-18.847656 127.636719-53.066406 34.222656-34.222657 53.070312-79.554688 53.070312-127.640625zm-180.703125 234.871094-81.648438.003906c-3.980468 0-7.792968 1.578125-10.605468 4.390625l-58.253906 58.253906c-.074219.078126-.152344.152344-.230469.226563 0-.105469 0-.214844 0-.320313v-58.355468c0-6.222656-3.839844-11.796875-9.652344-14.015625-58.25-22.226563-97.386719-78.847657-97.386719-140.890625v-84.164063c0-40.074219 15.726563-77.871093 44.28125-106.429687 28.554688-28.550782 66.347656-44.277344 106.421875-44.277344h107.070313c40.074218 0 77.871094 15.726562 106.425781 44.28125 28.558594 28.558594 44.285156 66.355469 44.28125 106.425781l.003906 84.164063c-.003906 83.101562-67.609375 150.707031-150.707031 150.707031zm0 0"
+                                              fill="#858585" data-original="#000000" style=""/>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                              d="m274.132812 245.335938c-5.855468-5.859376-15.351562-5.859376-21.210937 0l-12.117187 12.113281-46.953126-46.949219 12.117188-12.113281c2.8125-2.8125 4.394531-6.628907 4.394531-10.609375 0-3.976563-1.582031-7.792969-4.394531-10.605469l-56.804688-56.804687c-2.8125-2.8125-6.625-4.394532-10.605468-4.394532-3.976563 0-7.792969 1.582032-10.605469 4.394532l-39.765625 39.765624c-21.503906 21.503907-21.503906 56.5.003906 78.015626l124.964844 124.972656c10.390625 10.386718 24.246094 16.105468 39.007812 16.105468 14.765626 0 28.621094-5.71875 39.011719-16.105468l39.765625-39.761719c2.8125-2.816406 4.394532-6.628906 4.394532-10.609375 0-3.976562-1.582032-7.792969-4.394532-10.605469zm-4.171874 96.566406c-4.722657 4.722656-11.042969 7.324218-17.796876 7.324218-6.753906 0-13.074218-2.601562-17.796874-7.324218l-124.960938-124.96875c-9.8125-9.8125-9.816406-25.78125-.003906-35.589844l29.15625-29.160156 35.589844 35.59375-12.117188 12.113281c-2.8125 2.8125-4.394531 6.628906-4.394531 10.605469 0 3.980468 1.582031 7.792968 4.394531 10.609375l68.164062 68.164062c5.859376 5.855469 15.355469 5.859375 21.214844 0l12.117188-12.113281 35.589844 35.589844zm0 0"
+                                              fill="#858585" data-original="#000000" style=""/>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                              d="m237.882812 66.355469c-8.285156 0-15 6.714843-15 15 0 8.28125 6.714844 15 15 15 34.328126 0 66.605469 13.367187 90.878907 37.644531 24.277343 24.273438 37.644531 56.546875 37.644531 90.878906 0 8.28125 6.714844 15 15 15 8.28125 0 15-6.714844 15-15 0-42.34375-16.488281-82.152344-46.429688-112.09375-29.941406-29.941406-69.75-46.429687-112.09375-46.429687zm0 0"
+                                              fill="#858585" data-original="#000000" style=""/>
+                                        <path xmlns="http://www.w3.org/2000/svg"
+                                              d="m302.140625 224.875c0 8.28125 6.71875 15 15 15 8.285156 0 15-6.71875 15-15 0-51.972656-42.285156-94.253906-94.257813-94.253906-8.285156 0-15 6.714844-15 15s6.714844 15 15 15c35.433594 0 64.257813 28.824218 64.257813 64.253906zm0 0"
+                                              fill="#858585" data-original="#000000" style=""/>
+                                    </g></svg>
+                            </a>-->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section> <!--END Contact -->
+    </div> <!-- контакты -->
 
-<?php
-get_footer();
+    <?php get_footer() ?>

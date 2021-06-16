@@ -1,206 +1,118 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package innovationfund
- */
-
-require_once('init.php');
-
-$fund_name = 'Фонд Підтримки Iнновацій';
-$abbr = 'ФПI';
-$title = $fund_name . $abbr;
-$preview_img = 'http://innovationfund.in/img/logo.png';
-
-$menu = [
-    [
-        'title' => 'Інновацiї',
-        'link' => '/innovations'
-    ],
-    [
-        'title' => 'Проекти',
-        'link' => '/projects'
-    ],
-    [
-        'title' => 'R&D',
-        'link' => '/university-products'
-    ],
-    [
-        'title' => 'Партнеры',
-        'link' => '/partners'
-    ],
-    [
-        'title' => 'HR',
-        'link' => '/hr'
-    ],
-    [
-        'title' => 'Новини',
-        'link' => '/news'
-    ]
-];
-
-?>
-
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns#">
+<html prefix="og: http://ogp.me/ns#" lang="ru-RU">
+
 <head>
-
-    <!-- TODO: УБРАТЬ НА ПРОДЕ-->
-    <meta http-equiv="Cache-Control" content="no-cache">
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142992307-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-
-        gtag('config', 'UA-142992307-2', {'optimize_id': 'GTM-T3PMB68'});
-    </script>
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="<?= $description; ?>">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="Официальный сайт Фонда Поддержки Инноваций">
     <meta name="keywords"
           content="фпи, фпi, fis, фпи Одесса, фпi Одеса, fis Odesa, фонд підтримки інновацій, фонд поддержки инноваций,
           fund of innovation support, innovationfund Одесса, фонд поддержки инноваций Одесса, фонд підтримки інновацій Одеса,
           fund of innovation support Odesa, стартапы Одесса, стартапи Одеса, Odesa startups, павел коен фонд, <?php $keywords; ?>">
 
-    <meta property="og:title" content="<?= $title; ?> <?= !empty($subtitle) ? '» ' . $subtitle : ''; ?>">
+    <meta property="og:title" content="Фонд Поддержки Инноваций">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://innovationfund.in">
-    <meta property="og:image" content="<?= $preview_img; ?>">
-    <meta property="og:site_name" content="<?= $fund_name; ?>">
+    <meta property="og:url" content="http://new.innovationfund.in">
+    <meta property="og:image" content="<?php echo get_template_directory_uri() ?>/dist/img/bg.jpg">
+    <meta property="og:site_name" content="Фонд Поддержки Инноваций">
 
-    <link rel="canonical" href="http://innovationfund.in">
+    <link rel="canonical" href="http://new.innovationfund.in">
 
-    <title><?= $title; ?> <?= !empty($subtitle) ? '» ' . $subtitle : ''; ?> | <?= $abbr; ?></title>
-
-    <!-- Общие настройки иконок -->
-    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/logo.png" type="image/png">
-    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo get_template_directory_uri(); ?>/img/logo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-    <meta name="theme-color" content="#ffffff">
+    <!-- Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#457677">
+    <meta name="msapplication-TileColor" content="#fac05e">
+    <meta name="theme-color" content="#ffffff">
 
-    <!-- Плитки Windows -->
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/img/logo.png">
+    <title>Фонд Поддержки Инноваций</title>
 
-    <!-- Закладка Yandex.Browser -->
-    <meta name="yandex-tableau-widget" content="logo=http://innovationfund.in/img/yandex-tab.png,color=#ffffff">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <?php wp_head(); ?>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <!-- Font Awesome icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-    <!-- reCAPTCHA -->
-    <script src='https://www.google.com/recaptcha/api.js?render=6LdLFq8UAAAAAODmNIvDXVFf36LwBDqKpKqCeqom'></script>
 </head>
 
 <body>
+
 <header>
-
-    <!--Показывается на экранах 1200px и больше-->
-    <div class="xs-hide sm-hide md-hide lg-hide main-menu">
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white">
-            <div class="col-1 p-0">
-                <a class="navbar-brand" href="//innovationfund.in">
-                    <img src="<?php echo get_template_directory_uri(); ?>/<?php the_field('logo'); ?>" width="50" height="50" class="d-inline-block align-top" alt=""
-                         title="Main page">
-                </a>
-                <span class="font-size-s"><? $fund_name; ?></span>
+    <div class="header-top">
+        <div class="header-top__left">
+            <div class="header-contacts">
+                <ul class="header-list">
+                    <li class="header-contacts__item">
+                        <a class="header-contacts__link" href="tel:+380995250511">
+                            +380 99 525 05 11
+                        </a>
+                    </li>
+                    <li class="header-contacts__item">
+                        <a class="header-contacts__link" href="mailto:innovationfund@onu.edu.ua">
+                            innovationfund@onu.edu.ua
+                        </a>
+                    </li>
+                </ul>
             </div>
 
-                <?php if (isset($_SESSION['user'])): ?>
-                    <a class="nav-item nav-link p-0" href="/add-innovation">
-                        <span style="font-size: 1em; color: #222224;"><i class="far fa-user-circle"></i></span>
-                    </a>
-                <?php endif; ?>
-
-            <div class="container col-9 mx-auto">
-
-                <?php wp_nav_menu(array(
-                    'theme_location' => 'main',
-                    'container' => null,
-                    'menu_class' => null,
-                    'menu_id' => null,
-                )) ?>
-
-                <?php /*if (!empty($menu)): */?><!--
-                    <?php /*foreach ($menu as $value): */?>
-                        <a class="nav-item nav-link text-nowrap <?php /*echo ($title == $value['title']) ? 'active' : ''; */?>"
-                           href="<?/*= $value['link']; */?>"><?/*= $value['title']; */?></a>
-                    <?php /*endforeach; */?>
-                    <a class="nav-item nav-link text-nowrap" href="http://space.innovationfund.in/">
-                        <span class="text-blue">in</span><span class="text-yellow">.</span><span
-                                class="text-blue">space</span>
-                    </a>
-                --><?php /*endif; */?>
+            <div class="header-nav">
+                <ul class="header-list">
+                    <li class="header-nav__item">
+                        <a class="header-nav__link js-scroll-trigger" data-scroll="#abiut">
+                            О фонде
+                        </a>
+                    </li>
+                    <li class="header-nav__item">
+                        <a class="header-nav__link js-scroll-trigger" data-scroll="#contact">
+                            Обратная связь
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+
+        <div class="header-top__right">
+            <div class="header-lang"></div>
+        </div>
     </div>
 
-    <!--Показывается на экранах от 0 до 1200px-->
-    <div class="pos-f-t xl-hide fixed-top">
-        <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-white text-right p-4 mt-5">
-                <?php foreach ($menu as $value): ?>
-                    <a class="nav-item nav-link <?php echo ($title == $value['title']) ? 'active' : ''; ?>"
-                       href="<?= $value['link']; ?>"><?= $value['title']; ?></a>
-                <?php endforeach; ?>
 
-                <a class="nav-item nav-link text-nowrap" href="http://space.innovationfund.in/" target="_blank">
-                    <span class="text-blue">in</span><span class="text-yellow">.</span><span
-                            class="text-blue">space</span>
-                </a>
+    <?php if (is_front_page()): ?>
+        <div class="header-banner">
+            <div class="header-cover">
+                <img class="hide-mobile" src="<?php echo get_template_directory_uri(); ?>/dist/img/bg.JPG" alt="">
+            </div>
 
-                <?php if (isset($_SESSION['user'])): ?>
-                    <a class="nav-item nav-link" href="/admin/news">
-                        <span style="font-size: 1em; color: #222224;"><i class="far fa-user-circle"></i></span>
-                    </a>
-                <?php endif; ?>
-
-                <div class="mt-3 mt-xl-0 mr-3 mr-xl-0">
-                    <a class="icon icon-lang icon-en  <?php echo ($_COOKIE['language'] == 'en') ? 'icon-en-active' : ''; ?>"
-                       href="?lang=en"></a>
-                    <a class="icon icon-lang icon-uk <?php echo ($_COOKIE['language'] == 'uk') ? 'icon-uk-active' : ''; ?>"
-                       href="?lang=uk"></a>
-                    <a class="icon icon-lang icon-ru <?php echo ($_COOKIE['language'] == 'ru') ? 'icon-ru-active' : ''; ?>"
-                       href="?lang=ru"></a>
+            <div class="header-text">
+                <div class="header-text__title">Фонд Поддержки Инноваций</div>
+                <div class="header-text__paragraph">
+                    Организация, которая объединяет бизнес, науку и образование для развития этих направлений
                 </div>
             </div>
         </div>
-        <nav class="navbar navbar-light fixed-top bg-white">
-            <a class="navbar-brand" href="//innovationfund.in">
-                <img src="<?php echo get_template_directory_uri(); ?>/<?php the_field('logo'); ?>" width="30" height="30" class="d-inline-block align-top" alt="">
-            </a><span class="font-size-s"><?= $fund_name; ?></span>
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarToggleExternalContent"
-                    aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <?php endif ?>
+
+    <div class="header-bottom header-bottom_home">
+        <div class="header-logo">
+            <img class="header-logo__img" src="<?php echo get_template_directory_uri() ?>/dist/img/logo-text-w.png"
+                 alt="Fund of Innovation Support logo">
+        </div>
+
+        <nav class="header-menu">
+            <ul class="header-list">
+                <li class="header-menu__item"><a class="header-menu__link" href="">Инновации</a></li>
+                <li class="header-menu__item"><a class="header-menu__link" href="">Проекты</a></li>
+                <li class="header-menu__item"><a class="header-menu__link" href="">R&D</a></li>
+                <li class="header-menu__item"><a class="header-menu__link" href="">Партнеры</a></li>
+                <li class="header-menu__item"><a class="header-menu__link" href="">HR</a></li>
+                <li class="header-menu__item"><a class="header-menu__link" href="">Новости</a></li>
+            </ul>
         </nav>
+
+        <div class="header-btn">
+            <a class="btn btn_filled_blue" href="" target="_blank">Поддержать фонд</a>
+        </div>
     </div>
 </header>
-
-<main>
-    <?php if (isset($header)): ?>
-        <hr class="yellow short-center">
-        <h1 class="text-center mb-5"><?= $header; ?></h1>
-    <?php endif; ?>
-	

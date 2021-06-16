@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="Hosting.ua" showNewOnSourceInSync="false" showNewOnTargetInSync="false">
+  <component name="PublishConfigData" serverName="new.innovationfund.in" showNewOnSourceInSync="false" showNewOnTargetInSync="false">
     <serverData>
-      <paths name="Hosting.ua">
+      <paths name="innovationfund.in">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$/old" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="/awstats" />
+            <excludedPath path="/cgi-bin" />
+            <excludedPath path="/cp" />
+            <excludedPath path="/images" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="new.innovationfund.in">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
