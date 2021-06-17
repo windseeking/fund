@@ -1,5 +1,6 @@
 @import "_vars.scss";
 @import "_fonts.scss";
+@import "_text.scss";
 @import "_grid.scss";
 
 html {
@@ -35,6 +36,19 @@ ul ul,
 ol ul,
 ul ol {
   margin-bottom: 0;
+}
+
+ul {
+  padding-left: 0;
+  li {
+    margin-bottom: $mb-sm;
+    list-style-type: none;
+    &:before {
+      margin-right: 6px;
+      content: "—";
+      color: $color-8;
+    }
+  }
 }
 
 blockquote {
@@ -220,6 +234,8 @@ body {
   font-weight: $fw-base;
   text-align: left;
   background-color: #fff;
+  font-smooth: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 @import "components/**/*"; // Автоимпорт всех файлов с папки

@@ -4,19 +4,22 @@ $font-base: "GraphikLCG", $serif;
 @media screen and (max-width: 767px) {
   $fs-base: 18px;
 }
+
 $fs-base: 16px;
 $fs-xxs: $fs-base * .6;
 $fs-xs: $fs-base * .75;
 $fs-sm: $fs-base * .875;
-$fs-md: $fs-base * 1.5;
-$fs-lg: $fs-base * 2.25;
-$fs-xl: $fs-base * 3;
+$fs-md: $fs-base * 1.125;
+$fs-lg: $fs-base * 1.5;
+$fs-xl: $fs-base * 2.25;
+$fs-xxl: $fs-base * 3;
 
 $fw-base: 400;
 $fw-medium: 500;
 $fw-bold: 600;
 $fw-black: 700;
 $fw-xblack: 800;
+$fw-max: 900;
 
 $color-1: #222222;
 $color-2: #457677;
@@ -31,9 +34,9 @@ $ls-wide: 1px;
 
 $lh-xl: 2;
 $lh-lg: 1.75;
-$lh-md: 1.15;
-$lh-base: 1;
-$lh-sm: .75;
+$lh-md: 1.5;
+$lh-base: 1.2;
+$lh-sm: 1;
 $lh-xs: .5;
 
 $mb-base: 20px;
@@ -41,3 +44,5 @@ $mb-sm: $mb-base * .5;
 $mb-md: $mb-base * 1.2;
 
 $p-mb: 20px;
+
+$border: 1px solid rgba(0, 0, 0, .07);

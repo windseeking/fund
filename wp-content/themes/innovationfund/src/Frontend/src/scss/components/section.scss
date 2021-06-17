@@ -1,0 +1,22 @@
+section {
+  margin: 45px;
+  padding: 0 65px;
+
+  &.section_narrow {
+    padding: 0 115px;
+  }
+
+  &.section_border_top {
+    padding-top: 45px;
+    border-top: $border;
+  }
+
+  .section-title {
+    color: $color-2;
+    font-size: $fs-xs;
+    font-weight: $fw-bold;
+    letter-spacing: $ls-wide;
+    text-transform: uppercase;
+    margin-bottom: $mb-base;
+  }
+}

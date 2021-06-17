@@ -37,7 +37,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php echo (is_front_page()) ? 'class="home"' : ''; ?>>
 
 <header>
     <div class="header-top">
@@ -61,7 +61,7 @@
                 <ul class="header-list">
                     <li class="header-nav__item">
                         <a class="header-nav__link js-scroll-trigger" data-scroll="#abiut">
-                            О фонде
+                            Про фонд
                         </a>
                     </li>
                     <li class="header-nav__item">
@@ -94,7 +94,7 @@
         </div>
     <?php endif ?>
 
-    <div class="header-bottom header-bottom_home">
+    <div class="header-bottom header-bottom<?php echo (is_front_page()) ? '_home' : '' ?>">
         <a class="header-logo" href="<?php home_url() ?>">
             <img class="header-logo__img" src="<?php echo get_template_directory_uri() ?>/dist/img/logo-text-w.png"
                  alt="Fund of Innovation Support logo">

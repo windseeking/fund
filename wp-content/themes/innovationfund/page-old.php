@@ -1,47 +1,64 @@
 <?php get_header(); ?>
 
-<!-- о фонде -->
-<section>
-    <h1 class="section-title">О фонде</h1>
-    <div class="fs-lg fw-max mb-2">Фонд Поддержки Инноваций</div>
-    <div class="fs-md">– это студенческий стартап, созданный для:</div>
-    <div class="row justify-content-between mt-5">
-        <div class="col-12 col-md-3">
-            <div class="fs-lg fw-max c-blue mb-3">01</div>
-            <div>кооперации бизнеса и университета</div>
+<div class="full-width about" id="about"> <!-- о фонде -->
+    <div class="inner">
+        <div class="cat-title">О Фонде</div>
+        <div class="title">
+            Фонд Поддержки Инноваций
         </div>
-        <div class="col-12 col-md-3">
-            <div class="fs-lg fw-max c-blue mb-3">02</div>
-            <div>развития и внедрения инноваций</div>
+        <div class="subtitle">
+            – это студенческий стартап, созданный для:
         </div>
-        <div class="col-12 col-md-3">
-            <div class="fs-lg fw-max c-blue mb-3">03</div>
-            <div>развития бизнеса путем внедрения технологий</div>
+        <div class="content">
+            <div class="wisiwyg-wrap">
+                &#8203;
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <h4>01</h4>
+                            <span>кооперации бизнеса и университета</span></td>
+                        <td>
+                            <h4>02</h4>
+                            <span>развития и внедрения<br> инноваций</span></td>
+                        <td>
+                            <h4>03</h4>
+                            <span>развития бизнеса путем внедрения технологий</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</section>
-<!-- / о фонде -->
+</div> <!-- о фонде -->
 
-<!-- миссия и принципы -->
-<section class="section_narrow section_border_top">
-    <diw class="row justify-content-between">
-        <div class="col-12 col-lg-5">
-            <div class="fs-xl fw-max mb-3">Миссия</div>
-            <p>Развитие экономики путем установления отношений между бизнесом, наукой и образованием.</p>
+<div class="full-width block-two-column block-two-column-border-top mission"> <!-- миссия и принципы -->
+    <div class="inner">
+        <div class="column">
+            <div class="two-column-item">
+                <div class="title-column">Миссия</div>
+                <div class="description">
+                    <p>
+                        Развитие экономики путем установления отношений между бизнесом, наукой и образованием.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="col-12 col-lg-5">
-            <div class="fs-xl fw-max mb-3">Принципы</div>
-            <ul>
-                <li>Прозрачность</li>
-                <li>Открытость</li>
-                <li>Официальность</li>
-                <li>Высокие цели</li>
-            </ul>
+        <div class="column">
+            <div class="two-column-item">
+                <div class="title-column">Принципы</div>
+                <div class="description">
+                    <ul>
+                        <li>Прозрачность</li>
+                        <li>Открытость</li>
+                        <li>Официальность</li>
+                        <li>Высокие цели</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </diw>
-</section>
-<!-- / миссия и принципы -->
-
+    </div>
+</div> <!-- миссия и принципы -->
 
 <div class="full-width work"> <!-- как мы работаем -->
     <div class="inner">
@@ -160,8 +177,7 @@
 
 <div class="full-width team pt-5"> <!-- команда -->
     <div class="leadership-item mx-auto">
-        <div class="leadership-img"><img src="<?php echo get_template_directory_uri() ?>/dist/img/koyen.jpg" alt="">
-        </div>
+        <div class="leadership-img"><img src="<?php echo get_template_directory_uri() ?>/dist/img/koyen.jpg" alt=""></div>
         <div class="leadership-description-wrapper">
             <div class="leadership-name">Павел Коен</div>
             <div class="leadership-position">Основатель и глава</div>
@@ -169,8 +185,7 @@
     </div>
 
     <div class="leadership-item mx-auto">
-        <div class="leadership-img"><img src="<?php echo get_template_directory_uri() ?>/dist/img/chernetsky.jpg"
-                                         alt=""></div>
+        <div class="leadership-img"><img src="<?php echo get_template_directory_uri() ?>/dist/img/chernetsky.jpg" alt=""></div>
         <div class="leadership-description-wrapper">
             <div class="leadership-name">Алексей Чернецкий</div>
             <div class="leadership-position">Юрист</div>
@@ -178,8 +193,7 @@
     </div>
 
     <div class="leadership-item mx-auto">
-        <div class="leadership-img"><img src="<?php echo get_template_directory_uri() ?>/dist/img/dolzhenko.jpg" alt="">
-        </div>
+        <div class="leadership-img"><img src="<?php echo get_template_directory_uri() ?>/dist/img/dolzhenko.jpg" alt=""></div>
         <div class="leadership-description-wrapper">
             <div class="leadership-name">Максим Долженко</div>
             <div class="leadership-position">Бизнес-консультант</div>
