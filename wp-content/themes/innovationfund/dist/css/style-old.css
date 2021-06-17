@@ -360,7 +360,7 @@ input[type=checkbox]:after {
     bottom: .39vw;
     width: .94vw;
     height: .7vw;
-    background-image: url(/wp-content/themes/innovationfund/img/icon-checked.svg);
+    background-image: url(/wp-content/themes/innovationfund/dist/img/icon-checked.svg);
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0;
@@ -2298,7 +2298,7 @@ input[type=submit]:hover {
 }
 
 .fixed-top .navbar-toggler-icon {
-    background-image: url("/wp-content/themes/innovationfund/img/toggler.svg") !important;
+    background-image: url("/wp-content/themes/innovationfund/dist/img/toggler.svg") !important;
 }
 
 .fixed-top .phone {
@@ -4571,7 +4571,7 @@ footer .contacts a {
     width: 1.25vw;
     height: .78vw;
     margin-right: .39vw;
-    background-image: url("/wp-content/themes/innovationfund/img/dropdown.svg");
+    background-image: url("/wp-content/themes/innovationfund/dist/img/dropdown.svg");
     background-position: 50%;
     background-size: cover;
     -webkit-transition-property: -webkit-transform;
@@ -4882,31 +4882,31 @@ footer .contacts a {
 }
 
 .roadmap .step-1 th::before {
-    content: url("/wp-content/themes/innovationfund/img/step-1.svg");
+    content: url("/wp-content/themes/innovationfund/dist/img/step-1.svg");
 }
 
 .roadmap .step-2 th::before {
-    content: url("/wp-content/themes/innovationfund/img/step-2.svg");
+    content: url("/wp-content/themes/innovationfund/dist/img/step-2.svg");
 }
 
 .roadmap .step-3 th::before {
-    content: url("/wp-content/themes/innovationfund/img/step-3.svg");
+    content: url("/wp-content/themes/innovationfund/dist/img/step-3.svg");
 }
 
 .roadmap .step-4 th::before {
-    content: url("/wp-content/themes/innovationfund/img/step-4.svg");
+    content: url("/wp-content/themes/innovationfund/dist/img/step-4.svg");
 }
 
 .roadmap .step-5 th::before {
-    content: url("/wp-content/themes/innovationfund/img/step-5.svg");
+    content: url("/wp-content/themes/innovationfund/dist/img/step-5.svg");
 }
 
 .roadmap .step-6 th::before {
-    content: url("/wp-content/themes/innovationfund/img/step-6.svg");
+    content: url("/wp-content/themes/innovationfund/dist/img/step-6.svg");
 }
 
 .roadmap .step-7 th::before {
-    content: url("/wp-content/themes/innovationfund/img/step-7.svg");
+    content: url("/wp-content/themes/innovationfund/dist/img/step-7.svg");
 }
 
 .roadmap li {

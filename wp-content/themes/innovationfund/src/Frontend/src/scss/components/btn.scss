@@ -3,17 +3,23 @@
   align-items: center;
   justify-content: center;
   margin: 0;
-  padding: 8px 20px;
+  padding: 15px 25px;
   text-align: center;
   border-width: 2px;
   border-style: solid;
   border-radius: 2em;
-  font-weight: $fw-bold;
-  font-size: inherit;
+  border-color: $color-1;
+  font-weight: 700;
+  font-size: $fs-xs;
   letter-spacing: $ls-wide;
   text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
+  transition: all .3s ease;
+
+  &:hover {
+    transition: all .3s ease;
+  }
 
   &:focus {
     outline: none;
@@ -21,11 +27,22 @@
 
   &_outline {
     background: transparent;
+
     &_yellow {
       color: $color-8;
       border-color: $color-8;
+
       &:hover {
         background-color: $color-8;
+      }
+    }
+
+    &_blue {
+      color: $color-2;
+      border-color: $color-2;
+
+      &:hover {
+        background-color: $color-2;
       }
     }
   }
@@ -34,6 +51,7 @@
     &_blue {
       background-color: $color-2;
       border-color: $color-2;
+
       &:hover {
         background-color: transparent;
         border-color: $color-2;

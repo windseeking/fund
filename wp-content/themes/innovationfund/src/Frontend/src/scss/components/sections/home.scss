@@ -1,3 +1,162 @@
 .home {
+  .roadmap {
+    margin-left: 70px;
 
+    table {
+      margin-left: 150px;
+
+      tr {
+        box-sizing: border-box;
+        width: 100%;
+
+        .roadmap__title {
+          font-size: $fs-lg;
+          font-weight: 700;
+          margin: 0 0 7px 8px;
+        }
+
+        .roadmap__text {
+          margin: 0 0 36px 8px;
+        }
+
+        &.roadmap__step {
+          &_1 {
+            th {
+              &:before {
+                content: url("/wp-content/themes/innovationfund/dist/img/step-1.svg")
+              }
+            }
+          }
+
+          &_2 {
+            th {
+              &:before {
+                content: url("/wp-content/themes/innovationfund/dist/img/step-2.svg")
+              }
+            }
+          }
+
+          &_3 {
+            th {
+              &:before {
+                content: url("/wp-content/themes/innovationfund/dist/img/step-3.svg")
+              }
+            }
+          }
+
+          &_4 {
+            th {
+              &:before {
+                content: url("/wp-content/themes/innovationfund/dist/img/step-4.svg")
+              }
+            }
+          }
+
+          &_5 {
+            th {
+              &:before {
+                content: url("/wp-content/themes/innovationfund/dist/img/step-5.svg")
+              }
+            }
+          }
+
+          &_6 {
+            th {
+              &:before {
+                content: url("/wp-content/themes/innovationfund/dist/img/step-6.svg")
+              }
+            }
+          }
+
+          &_7 {
+            th {
+              &:before {
+                content: url("/wp-content/themes/innovationfund/dist/img/step-7.svg")
+              }
+            }
+          }
+        }
+
+        &:last-child {
+          th {
+            &:after {
+              display: none;
+            }
+          }
+        }
+
+        th {
+          position: relative;
+          font-size: $fs-lg;
+          font-weight: 900;
+          color: $color-2;
+          vertical-align: baseline;
+
+          &::before {
+            position: absolute;
+            top: -2px;
+            right: 50px;
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+          }
+
+          &::after {
+            position: absolute;
+            content: '';
+            top: 10px;
+            right: 67px;
+            background-color: $color-9;
+            width: 1px;
+            height: 100%;
+            border-radius: 10px;
+            z-index: -1;
+          }
+        }
+      }
+    }
+  }
+
+  .team {
+    &__img {
+      overflow: hidden;
+      margin-bottom: $mb-base;
+      border-radius: 2px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &__name {
+      margin-bottom: 8px;
+      font-weight: 900;
+    }
+
+    &__position {
+      color: $color-4;
+      font-size: $fs-sm;
+    }
+  }
+
+  .contact {
+    &__title {
+      margin-bottom: 25px;
+      font-size: $fs-xl;
+      font-weight: 900;
+      width: 50%;
+    }
+
+    &__link {
+      display: block;
+      margin-bottom: 18px;
+      font-size: $fs-md;
+    }
+
+    &-messengers {
+      &__item:not(:last-child) {
+        margin-right: 12px;
+      }
+    }
+  }
 }
