@@ -29,14 +29,14 @@ footer {
         position: relative;
         font-size: $fs-xs;
 
-        &__item {
+        li {
           margin-bottom: 15px;
 
           &:last-child {
             position: absolute;
             top: 0;
             left: 200px;
-            width:max-content;
+            width: max-content;
           }
 
           li {
@@ -44,6 +44,10 @@ footer {
 
             &:first-child {
               margin-top: 12px;
+            }
+
+            &:last-child {
+              position: inherit;
             }
 
             a {
@@ -55,12 +59,12 @@ footer {
               }
             }
           }
-        }
 
-        &__link {
-          color: $color-8;
-          font-weight: $fw-bold;
-          text-transform: uppercase;
+          a {
+            color: $color-8;
+            font-weight: $fw-bold;
+            text-transform: uppercase;
+          }
         }
       }
     }
@@ -111,27 +115,27 @@ footer {
       justify-content: space-between;
       align-items: center;
 
-      &__item {
+      li {
         display: block;
         color: $color-4;
 
         &:not(:last-child) {
           margin-right: 58px;
         }
-      }
 
-      &__link {
-        color: $color-4;
-
-        &:hover {
-          color: $color-5;
-        }
-
-        &_dev {
-          color: $color-2;
+        a {
+          color: $color-4;
 
           &:hover {
-            color: $color-4;
+            color: $color-5;
+          }
+
+          &.dev {
+            color: $color-2;
+
+            &:hover {
+              color: $color-4;
+            }
           }
         }
       }
