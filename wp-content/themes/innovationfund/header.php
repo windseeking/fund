@@ -35,6 +35,9 @@
 
 <body <?php echo (is_front_page()) ? 'class="home"' : ''; ?>>
 
+<div style="padding: 10px; text-align: center; background-color: #FAC05E85">
+    Cайт находится в разработке. <a href="http://innovationfund.in" target="_blank">Перейти</a> на прежнюю версию сайта.
+</div>
 <header>
     <div class="header-top">
         <div class="header-top__left">
