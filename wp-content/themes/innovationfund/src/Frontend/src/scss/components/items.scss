@@ -1,11 +1,21 @@
 .card {
   padding-right: 40px;
-  padding-bottom: 36px;
+  padding-bottom: 28px;
+  margin-bottom: 36px;
+  border-bottom: .75px solid $color-6;
+
+  p {
+    margin: 6px 0;
+
+    &:first-child {
+      margin-bottom: 12px;
+    }
+  }
 
   &__title {
     margin-bottom: $mb-sm;
-    font-size: $fs-md;
-    font-weight: $fw-black;
+    font-size: $fs-lg;
+    font-weight: 700;
   }
 
   &__date {
@@ -27,18 +37,15 @@
       height: 2px;
       background-color: $color-7;
       margin: 0 8px 0 0;
-      -webkit-transition: width .3s ease, margin .3s ease;
-      -o-transition: width .3s ease, margin .3s ease;
-      transition: width .3s ease, margin .3s ease;
+      transition: all .3s ease;
     }
 
     &:hover {
       &:before {
         margin: 0 16px 0 0;
         width: 60px;
-        -webkit-transition: width .3s ease, margin .3s ease;
-        -o-transition: width .3s ease, margin .3s ease;
-        transition: width .3s ease, margin .3s ease;
+        background-color: $color-1;
+        transition: all .3s ease;
       }
     }
   }

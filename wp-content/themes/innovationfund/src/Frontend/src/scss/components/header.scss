@@ -17,12 +17,9 @@ header {
   }
 
   .header-top {
-    /*display: flex;
-    justify-content: space-between;
-    align-items: center;*/
     padding: 18px 58px;
     font-size: $fs-xxs;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: .8px;
 
     &__left {
@@ -103,7 +100,7 @@ header {
           margin-left: 10px;
           color: $color-1;
           font-size: $fs-xxs;
-          font-weight: 600;
+          font-weight: 500;
           letter-spacing: .7px;
         }
       }
@@ -118,6 +115,22 @@ header {
 
           &:hover {
             color: $color-5;
+          }
+        }
+      }
+    }
+
+    &_inner {
+      .header-menu {
+        a {
+          color: $color-1;
+
+          &:hover {
+            color: $color-4;
+          }
+
+          &[aria-current=page] {
+            color: $color-2;
           }
         }
       }
@@ -183,6 +196,39 @@ header {
     &__paragraph {
       font-size: $fs-base;
       width: 70%;
+    }
+  }
+}
+
+.page-header {
+  margin: 0 60px;
+  padding: 80px 0;
+  background-color: $color-5;
+  text-align: center;
+
+  &__title {
+    position: relative;
+    font-weight: 500;
+    font-size: $fs-xl;
+    line-height: 56px;
+
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 47%;
+      content: '';
+      display: block;
+      height: 2px;
+      width: 60px;
+      background-color: $color-8;
+    }
+
+    &__subtitle {
+      margin-top: 6px;
+
+      p:not(:last-child) {
+        margin-bottom: 12px;
+      }
     }
   }
 }

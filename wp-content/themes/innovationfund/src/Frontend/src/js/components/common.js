@@ -1,7 +1,8 @@
+// Scroll to anchor
 $('.js-scroll-trigger').click(function () {
-    var scrollName = $(this).attr('data-scroll'),
+    let scrollName = $(this).attr('data-scroll'),
         scrollElem = $(scrollName),
-        scrollTop = scrollElem.offset().top - 150;
+        scrollTop = scrollElem.offset().top - 80;
 
     $('html, body').animate({
         scrollTop: scrollTop
