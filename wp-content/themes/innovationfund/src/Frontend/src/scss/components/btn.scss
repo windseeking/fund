@@ -18,6 +18,7 @@
   transition: all .3s ease;
 
   &:hover {
+    color: #ffffff;
     transition: all .3s ease;
   }
 
@@ -57,6 +58,24 @@
         border-color: $color-2;
         color: $color-2;
       }
+    }
+  }
+}
+
+.link {
+  &_arrow {
+    display: inline-block;
+    width: 2rem;
+    height: .7rem;
+    background-image: url(../img/right-arrow.svg);
+    background-size: .7rem;
+    background-repeat: no-repeat;
+    background-position-x: 5px;
+    transition: .3s;
+
+    &:hover {
+      background-position-x: 10px;
+      transition: .3s;
     }
   }
 }

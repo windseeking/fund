@@ -1,6 +1,5 @@
 section {
   margin: 45px 60px 120px;
-  //padding: 0 65px;
 
   &.section_bg {
     padding-top: 45px;
@@ -17,36 +16,57 @@ section {
       border-top: $border;
     }
 
+    &_bottom {
+      border-bottom: $border;
+    }
+
     &_btw {
-      .row {
+      .section__item {
+        padding: 45px 0;
 
-        & > div {
-          padding-top: 45px;
+        &:first-child {
+          padding-right: 50px;
+        }
 
-          &:first-child {
-            padding: 50px;
-          }
-
-          &:not(:first-child) {
-            padding-left: 50px;
-            border-left: $border;
-          }
+        &:not(:first-child) {
+          padding-left: 50px;
+          border-left: $border;
         }
       }
     }
   }
 
   &.section_narrow {
-    padding-left: 115px;
-    padding-right: 115px;
+    padding-left: 0;
+    padding-right: 0;
+
+    @media #{$lg} {
+      padding-left: 115px;
+      padding-right: 115px;
+    }
   }
 
   .section-title {
-    color: $color-2;
+    margin-bottom: 15px;
+    color: $color-4;
     font-size: $fs-xs;
     font-weight: 700;
     letter-spacing: $ls-wide;
     text-transform: uppercase;
-    margin-bottom: 30px;
+
+    &_accent {
+      margin-bottom: 30px;
+      color: $color-2;
+    }
   }
+}
+
+.cat-title {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: $color-4;
+  font-size: $fs-xs;
+  font-weight: 700;
+  letter-spacing: $ls-wide;
+  text-transform: uppercase;
 }

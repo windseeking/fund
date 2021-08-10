@@ -22,6 +22,7 @@ h6 {
 
 p {
   margin-bottom: $p-mb;
+  margin-top: 0;
 }
 
 ol,
@@ -48,6 +49,12 @@ ul {
       content: "—";
       color: $color-8;
     }
+  }
+}
+
+ol {
+  li {
+    margin-bottom: $mb-sm;
   }
 }
 
@@ -201,7 +208,7 @@ input[type=password],
 input[type=tel] {
   margin-top: 10px;
   padding: 7px 13px 10px;
-  height: 30px;
+  height: 42px;
   border-radius: 5px;
 }
 
@@ -277,4 +284,4 @@ body {
   }
 }
 
-@import "components/**/*"; // Автоимпорт всех файлов с папки
+@import "components/**/*";

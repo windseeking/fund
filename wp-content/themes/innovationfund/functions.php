@@ -1,7 +1,47 @@
 <?php
 
-add_filter('show_admin_bar', '__return_false'); // отключить
+/**
+ * Turns off admin bar
+ */
+add_filter('show_admin_bar', '__return_false');
 
+/**
+ * Turns on thumbnails
+ */
+function theme_register_support() {
+    add_theme_support('post-thumbnails', array('post'));
+    add_image_size('post_image', 400, 285, true);
+}
+
+/**
+ * Enqueues styles and scripts
+ */
+add_action( 'wp_enqueue_scripts', 'theme_scripts' );
+function theme_scripts() {
+    wp_enqueue_style( 'main-style', get_template_directory_uri() . '/dist/css/main.min.css', '', 1);
+    wp_enqueue_style( 'vendor-style', get_template_directory_uri() . '/dist/css/vendor.css', '', 1);
+    wp_enqueue_script( 'vendor-script', get_template_directory_uri() . '/dist/js/vendor.js', 'null', 1, true);
+    wp_enqueue_script( 'main-script', get_template_directory_uri() . '/dist/js/script.min.js', 'jquery', 1, true);
+}
+
+/**
+ * Adds menus support
+ */
+add_theme_support( 'menus' );
+
+/**
+ * Registers menu location
+ */
+add_action( 'after_setup_theme', 'theme_register_nav_menu' );
+function theme_register_nav_menu() {
+    register_nav_menu( 'header', 'Шапка' );
+    register_nav_menu( 'footer-top', 'Подвал, верх' );
+    register_nav_menu( 'footer-bottom', 'Подвал, низ' );
+}
+
+/**
+ * Registers widgets
+ */
 add_action( 'widgets_init', 'innovationfund_widgets_init' );
 function innovationfund_widgets_init() {
 	register_sidebar(
@@ -29,20 +69,9 @@ function innovationfund_widgets_init() {
     );
 }
 
-
-add_action( 'wp_enqueue_scripts', 'theme_scripts' );
-function theme_scripts() {
-    wp_enqueue_style( 'main', get_template_directory_uri() . '/dist/css/main.min.css');
-    wp_enqueue_style( 'bootstrap-grid', get_template_directory_uri() . '/dist/css/bootstrap-grid.min.css');
-//    wp_enqueue_style( 'old', get_template_directory_uri() . '/dist/css/style-old.css');
-    wp_enqueue_script( 'script', get_template_directory_uri() . '/dist/js/script.js', 'jquery');
-}
-
-function theme_register_support() {
-    add_theme_support('post-thumbnails', array('post'));
-    add_image_size('post_image', 400, 285, true);
-}
-
+/**
+ * Registers Innovation post type
+ */
 add_action( 'init', 'register_post_types' );
 function register_post_types(){
     register_post_type( 'innovations', [
@@ -85,6 +114,10 @@ function register_post_types(){
     ] );
 }
 
+/**
+ * Adds custom classes to <li> in menu
+ * TODO: проверить, используется ли
+ */
 add_filter( 'nav_menu_css_class', 'custom_class', 10, 4 );
 function custom_class( $classes, $item, $args, $depth ) {
     if ( 'primary' === $args->theme_location ) {

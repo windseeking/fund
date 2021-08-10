@@ -9,7 +9,7 @@
     <meta name="keywords"
           content="фпи, фпi, fis, фпи Одесса, фпi Одеса, fis Odesa, фонд підтримки інновацій, фонд поддержки инноваций,
           fund of innovation support, innovationfund Одесса, фонд поддержки инноваций Одесса, фонд підтримки інновацій Одеса,
-          fund of innovation support Odesa, стартапы Одесса, стартапи Одеса, Odesa startups, павел коен фонд, <?php $keywords; ?>">
+          fund of innovation support Odesa, стартапы Одесса, стартапи Одеса, Odesa startups, павел коен фонд>">
 
     <meta property="og:title" content="Фонд Поддержки Инноваций">
     <meta property="og:type" content="website">
@@ -59,7 +59,7 @@
             <div class="header-nav">
                 <ul class="header-list">
                     <li class="header-nav__item">
-                        <a class="header-nav__link js-scroll-trigger" data-scroll="#abiut">
+                        <a class="header-nav__link js-scroll-trigger" data-scroll="#about">
                             Про фонд
                         </a>
                     </li>
@@ -93,25 +93,36 @@
         </div>
     <?php endif ?>
 
-    <div class="header-bottom header-bottom<?php echo (is_front_page()) ? '_home' : '' ?>">
-        <a class="header-logo" href="<?php home_url() ?>">
-            <img class="header-logo__img" src="<?php echo get_template_directory_uri() ?>/dist/img/logo-text-w.png"
+    <div class="header-bottom header-bottom<?php echo (is_front_page()) ? '_home' : '_inner' ?>">
+        <a class="header-logo" href="<?php echo home_url(); ?>">
+            <img class="header-logo__img" src="<?php echo get_template_directory_uri() ?>/dist/img/<?php echo (is_front_page()) ? 'logo-text-w.png' : 'logo-text.png' ?>"
                  alt="Fund of Innovation Support logo">
         </a>
 
-        <nav class="header-menu">
-            <ul class="header-list">
-                <li class="header-menu__item"><a class="header-menu__link" href="">Инновации</a></li>
-                <li class="header-menu__item"><a class="header-menu__link" href="">Проекты</a></li>
-                <li class="header-menu__item"><a class="header-menu__link" href="">R&D</a></li>
-                <li class="header-menu__item"><a class="header-menu__link" href="">Партнеры</a></li>
-                <li class="header-menu__item"><a class="header-menu__link" href="">HR</a></li>
-                <li class="header-menu__item"><a class="header-menu__link" href="">Новости</a></li>
-            </ul>
-        </nav>
+        <?php
+        wp_nav_menu([
+            'theme_location' => 'header',
+            'container' => 'nav',
+            'container_class' => 'header-menu',
+            'menu_class' => 'header-list',
+            'echo' => true,
+            'items_wrap' => '<ul class="%2$s">%3$s</ul>',
+            'fallback_cb'   => false,
+            'add_li_class'  => 'your-class-name1 your-class-name-2'
+        ]);
+        ?>
 
         <div class="header-btn">
-            <a class="btn btn_filled_blue" href="" target="_blank">Поддержать фонд</a>
+            <a class="btn btn_filled_blue" href="https://send.monobank.com.ua/39XXQvurt" target="_blank">Поддержать фонд</a>
         </div>
     </div>
 </header>
+
+<?php if (!is_front_page()) : ?>
+    <div class="page-header">
+        <h1 class="page-header__title"><?php wp_title('') ?></h1>
+        <?php if (!empty(get_field('subtitle'))): ?>
+            <div class="page-header__subtitle"><?php the_field('subtitle') ?></div>
+        <?php endif ?>
+    </div>
+<?php endif ?>

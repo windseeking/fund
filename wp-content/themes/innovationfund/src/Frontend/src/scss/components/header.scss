@@ -7,8 +7,10 @@ header {
     padding: 0;
     list-style-type: none;
     text-transform: uppercase;
+
     li {
       margin-bottom: 0;
+
       &:before {
         margin-right: 0;
         content: none;
@@ -81,6 +83,7 @@ header {
     .header-logo {
       display: inline-block;
       width: 95px;
+
       &__img {
         height: 35px;
         width: auto;
@@ -202,7 +205,7 @@ header {
 
 .page-header {
   margin: 0 60px;
-  padding: 80px 0;
+  padding: 80px 0 45px;
   background-color: $color-5;
   text-align: center;
 
@@ -210,11 +213,11 @@ header {
     position: relative;
     font-weight: 500;
     font-size: $fs-xl;
-    line-height: 56px;
+    line-height: 45px;
 
     &:after {
       position: absolute;
-      bottom: 0;
+      bottom: -15px;
       left: 47%;
       content: '';
       display: block;
@@ -222,12 +225,69 @@ header {
       width: 60px;
       background-color: $color-8;
     }
+  }
 
-    &__subtitle {
-      margin-top: 6px;
+  &__subtitle {
+    margin: 6px auto 0 auto;
+    max-width: 550px;
 
-      p:not(:last-child) {
+    p {
+      margin: 0;
+
+      &:not(:last-child) {
         margin-bottom: 12px;
+      }
+    }
+  }
+
+  &__content {
+    padding: 0 150px 60px;
+    background-color: $color-5;
+  }
+
+  &__subpages {
+    position: relative;
+    padding: 36px 0;
+    background-color: $color-5;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background-color: rgba(0, 0, 0, .07);
+    }
+
+    ul {
+      margin: 0 auto;
+      display: flex;
+      max-width: 100%;
+      align-items: center;
+      justify-content: space-around;
+      text-align: center;
+      @media #{$lg} {
+        max-width: 70%;
+      }
+
+      li {
+        a {
+          font-size: $fs-xxs;
+          font-weight: 500;
+          letter-spacing: .7px;
+          color: $color-4;
+
+          &:hover {
+            color: $color-1;
+          }
+        }
+
+        &.active {
+          a {
+            color: $color-1;
+          }
+        }
       }
     }
   }

@@ -1,4 +1,50 @@
+.accordion {
+  h2 {
+    padding: 1rem 1.25rem;
+    font-weight: 500;
+    font-size: 1rem;
+    color: $color-1;
+  }
+
+  &-button {
+    padding: 0;
+    color: $color-2;
+    font-weight: 500;
+
+    &:after {
+      width: .7rem;
+      height: .7rem;
+      background-image: url("../img/dropdown.svg");
+      background-size: .7rem;
+    }
+
+    &:not(.collapsed) {
+      color: $color-2;
+      background-color: transparent;
+
+      &:after {
+        background-image: url("../img/dropdown.svg");
+      }
+    }
+
+    span {
+      margin-left: 5px;
+      display: contents;
+      vertical-align: baseline;
+      font-weight: 400;
+      font-size: $fs-xxs;
+    }
+  }
+
+  .cat-title {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
 .card {
+  display: flex;
   padding-right: 40px;
   padding-bottom: 28px;
   margin-bottom: 36px;
@@ -10,6 +56,29 @@
     &:first-child {
       margin-bottom: 12px;
     }
+  }
+
+  &__image {
+    margin-right: 25px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 312px;
+    height: 190px;
+    overflow: hidden;
+    border-radius: 7px;
+
+    img {
+      width: auto;
+    }
+
+    &_rounded {
+      border-radius: 50%;
+    }
+  }
+
+  &__content {
+    max-width: 70%;
   }
 
   &__title {
@@ -47,6 +116,20 @@
         background-color: $color-1;
         transition: all .3s ease;
       }
+    }
+  }
+
+  &_two-columns {
+    margin-bottom: 0;
+    padding: 36px 0;
+    flex-direction: column;
+
+    &:nth-child(odd) {
+      border-right: .75px solid $color-6;
+    }
+
+    &:nth-child(even) {
+      padding-left: 26px;
     }
   }
 }
