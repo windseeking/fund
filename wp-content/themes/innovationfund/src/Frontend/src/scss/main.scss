@@ -272,14 +272,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-@media screen and (max-width: 767px) {
-  .hide-mobile {
+@media screen and (max-width: 991px) {
+  .desktop {
     display: none;
   }
 }
 
-@media screen and (min-width: 768px) {
-  .hide-desktop {
+@media screen and (min-width: 992px) {
+  .mobile {
     display: none;
   }
 }

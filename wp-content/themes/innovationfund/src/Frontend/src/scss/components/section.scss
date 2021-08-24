@@ -1,5 +1,8 @@
 section {
-  margin: 45px 60px 120px;
+  margin: 20px 20px 70px;
+  @media #{$lg} {
+    margin: 45px 60px 120px;
+  }
 
   &.section_bg {
     padding-top: 45px;
@@ -12,8 +15,11 @@ section {
 
   &.section_border {
     &_top {
-      padding-top: 0;
+      padding-top: 30px;
       border-top: $border;
+      @media #{$lg} {
+        padding-top: 0;
+      }
     }
 
     &_bottom {
@@ -21,16 +27,18 @@ section {
     }
 
     &_btw {
-      .section__item {
-        padding: 45px 0;
+      @media #{$lg} {
+        .section__item {
+          padding: 45px 0;
 
-        &:first-child {
-          padding-right: 50px;
-        }
+          &:first-child {
+            padding-right: 50px;
+          }
 
-        &:not(:first-child) {
-          padding-left: 50px;
-          border-left: $border;
+          &:not(:first-child) {
+            padding-left: 50px;
+            border-left: $border;
+          }
         }
       }
     }
@@ -69,4 +77,8 @@ section {
   font-weight: 700;
   letter-spacing: $ls-wide;
   text-transform: uppercase;
+
+  &_accent {
+    color: $color-2;
+  }
 }

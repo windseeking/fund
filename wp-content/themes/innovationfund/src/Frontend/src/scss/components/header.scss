@@ -1,6 +1,9 @@
 header {
   position: relative;
-  margin: 0 60px;
+
+  @media #{$lg} {
+    margin: 0 60px;
+  }
 
   .header-list {
     margin: 0;
@@ -28,35 +31,35 @@ header {
       display: flex;
       align-items: center;
     }
+  }
 
-    .header-contacts {
-      display: inline-block;
+  .header-contacts {
+    display: inline-block;
 
-      &__item {
-        a {
-          color: $color-2;
-          line-height: $lh-lg;
-        }
+    &__item {
+      a {
+        color: $color-2;
+        line-height: $lh-lg;
       }
     }
+  }
 
-    .header-nav {
-      display: inline-block;
+  .header-nav {
+    display: inline-block;
 
-      .header-list {
-        display: flex;
-        align-items: stretch;
-      }
+    .header-list {
+      display: flex;
+      align-items: stretch;
+    }
 
-      li {
-        margin-left: 30px;
+    li {
+      margin-left: 30px;
 
-        a {
-          color: $color-4;
+      a {
+        color: $color-4;
 
-          &:hover {
-            color: $color-1;
-          }
+        &:hover {
+          color: $color-1;
         }
       }
     }
@@ -201,24 +204,96 @@ header {
       width: 70%;
     }
   }
+
+  .navbar {
+    padding: 10px 0;
+    background-color: $color-5;
+
+    .header-menu {
+      margin-bottom: 20px;
+      padding-top: 20px;
+      text-align: center;
+
+      li {
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+
+        a {
+          font-weight: 500;
+          color: $color-1;
+
+          &[aria-current=page] {
+            color: $color-2;
+          }
+        }
+      }
+    }
+
+    .header-contacts {
+      display: block;
+      text-align: center;
+
+      &__item {
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+    }
+
+    &-toggler {
+      margin-left: auto;
+      display: block;
+      background: none;
+      border: none;
+
+      &-icon {
+        width: 20px;
+        height: 20px;
+        display: block;
+        background-image: url("../img/toggler-dark.svg");
+        background-repeat: no-repeat;
+        background-size: 20px;
+      }
+
+      &[aria-expanded=true] {
+        .navbar-toggler-icon {
+          background-image: url("../img/arrow-dark.svg");
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
 }
 
 .page-header {
-  margin: 0 60px;
+  @media #{$lg} {
+    margin: 0 60px;
+  }
+  margin: 0;
   padding: 80px 0 45px;
   background-color: $color-5;
   text-align: center;
 
   &__title {
     position: relative;
-    font-weight: 500;
+    padding: 0 20px 40px;
+    font-weight: 700;
     font-size: $fs-xl;
     line-height: 45px;
+    word-break: break-word;
+    @media #{$lg} {
+      padding: 0 0 40px;
+      word-break: unset;
+    }
 
     &:after {
+      @media #{$lg} {
+        margin-left: -2.2vw;
+      }
       position: absolute;
-      bottom: -15px;
-      left: 47%;
+      bottom: 20px;
+      left: 50%;
+      margin-left: -6.5vw;
       content: '';
       display: block;
       height: 2px;
@@ -228,8 +303,12 @@ header {
   }
 
   &__subtitle {
-    margin: 6px auto 0 auto;
+    margin: 0 auto;
     max-width: 550px;
+    padding: 0 20px;
+    @media #{$lg} {
+      padding: 0;
+    }
 
     p {
       margin: 0;
@@ -241,14 +320,22 @@ header {
   }
 
   &__content {
-    padding: 0 150px 60px;
+    padding: 0 20px 60px;
     background-color: $color-5;
+    @media #{$lg} {
+      padding: 0 150px 60px;
+    }
   }
 
   &__subpages {
     position: relative;
-    padding: 36px 0;
+    padding: 20px 0 10px;
     background-color: $color-5;
+    overflow: hidden;
+
+    @media #{$lg} {
+      padding: 36px 0;
+    }
 
     &:after {
       content: "";
@@ -264,14 +351,33 @@ header {
       margin: 0 auto;
       display: flex;
       max-width: 100%;
+      height: 35px;
       align-items: center;
-      justify-content: space-around;
-      text-align: center;
+      justify-content: start;
+      white-space: nowrap;
+      overflow-x: auto;
       @media #{$lg} {
+        justify-content: space-around;
         max-width: 70%;
+        height: unset;
+        text-align: center;
+        white-space: initial;
+        overflow-x: unset;
       }
 
       li {
+        margin: 0 12px;
+        @media #{$lg} {
+          margin-right: 0;
+        }
+
+        &:first-child {
+          margin-left: 20px;
+          @media #{$lg} {
+            margin-left: 0;
+          }
+        }
+
         a {
           font-size: $fs-xxs;
           font-weight: 500;

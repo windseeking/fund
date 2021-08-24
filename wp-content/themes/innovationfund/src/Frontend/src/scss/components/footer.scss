@@ -1,15 +1,17 @@
-footer {
-  margin: 60px;
-  padding: 60px;
+.footer {
+  margin: 20px;
+  padding: 30px;
   background-color: $color-3;
   color: $color-6;
 
-  .footer-list {
+  &-list {
     margin: 0;
     padding: 0;
     list-style-type: none;
+
     li {
       margin-bottom: 0;
+
       &:before {
         margin-right: 0;
         content: none;
@@ -17,69 +19,42 @@ footer {
     }
   }
 
-  .footer-top {
+  &-top {
     display: flex;
     padding-bottom: 25px;
     justify-content: space-between;
-    border-bottom: 1px solid #FFFFFF26;
+    flex-direction: column;
+    text-align: center;
+  }
 
-    &__left {
+  &-nav {
+    font-size: $fs-xs;
 
-      .footer-nav {
-        position: relative;
-        font-size: $fs-xs;
+    li {
+      margin-bottom: 15px;
 
-        li {
-          margin-bottom: 15px;
-
-          &:last-child {
-            position: absolute;
-            top: 0;
-            left: 200px;
-            width: max-content;
-          }
-
-          li {
-            margin-bottom: 12px;
-
-            &:first-child {
-              margin-top: 12px;
-            }
-
-            &:last-child {
-              position: inherit;
-            }
-
-            a {
-              color: $color-6;
-              font-weight: 400;
-              text-transform: none;
-
-              &:hover {
-                color: $color-4;
-              }
-            }
-          }
-
-          a {
-            color: $color-8;
-            font-weight: $fw-bold;
-            text-transform: uppercase;
-          }
-        }
+      &:last-child {
+        position: initial;
+        top: unset;
+        left: unset;
+        width: auto;
       }
-    }
 
-    &__right {
+      li {
+        margin-bottom: 12px;
 
-      .footer-contacts {
-        margin-bottom: $mb-base;
+        &:first-child {
+          margin-top: 12px;
+        }
 
-        &__item {
-          display: block;
+        &:last-child {
+          position: inherit;
+        }
+
+        a {
           color: $color-6;
-          font-weight: $fw-medium;
-          line-height: $lh-xl;
+          font-weight: 400;
+          text-transform: none;
 
           &:hover {
             color: $color-4;
@@ -87,34 +62,135 @@ footer {
         }
       }
 
-      .btn {
-        display: inline-block;
-        margin-bottom: $mb-base;
-        font-size: $fs-xs;
+      a {
+        color: $color-8;
+        font-weight: $fw-bold;
+        text-transform: uppercase;
+      }
+    }
+  }
 
-        &:hover {
-          color: $color-3;
-        }
+  &-contacts {
+    margin-bottom: $mb-base;
+
+    &__item {
+      display: block;
+      color: $color-6;
+      font-weight: $fw-medium;
+      line-height: $lh-xl;
+
+      &:hover {
+        color: $color-4;
+      }
+    }
+  }
+
+  &-btn {
+    &__support {
+      display: block;
+      width: fit-content;
+      margin: 0 auto 20px;
+      font-size: $fs-xs;
+
+      &:hover {
+        color: $color-3;
+      }
+    }
+  }
+
+  &-social {
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+
+    &__item:not(:first-child) {
+      margin-left: 16px;
+    }
+  }
+
+  &-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    li {
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 20px;
       }
 
-      .footer-social {
-        display: flex;
+      a {
+        color: $color-4;
 
-        &__item:not(:first-child) {
-          margin-left: 16px;
+        &:hover {
+          color: $color-5;
+        }
+
+        &.dev {
+          color: $color-2;
+
+          &:hover {
+            color: $color-4;
+          }
         }
       }
     }
   }
 
-  .footer-bottom {
+  &-text {
+    line-height: 1.5;
+  }
+
+  &-bottom {
     font-size: $fs-xs;
     color: $color-4;
+  }
+
+  @media #{$lg} {
+    margin: 60px;
+    padding: 60px;
+    flex-direction: row;
+    text-align: left;
+
+    .footer-top {
+      border-bottom: 1px solid #FFFFFF26;
+      flex-direction: row;
+      text-align: left;
+    }
+
+    .footer-nav {
+      position: relative;
+
+      .footer-list {
+
+        & > li {
+          &:last-child {
+            position: absolute;
+            top: 0;
+            left: 200px;
+            width: max-content;
+          }
+        }
+      }
+    }
+
+    .footer-btn {
+      &__support {
+        display: inline-block;
+        margin: 0 0 20px;
+      }
+    }
+
+    .footer-social {
+      margin: 0;
+    }
 
     .footer-links {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: row;
+      align-items: start;
+      text-align: left;
 
       li {
         display: block;
@@ -122,22 +198,7 @@ footer {
 
         &:not(:last-child) {
           margin-right: 58px;
-        }
-
-        a {
-          color: $color-4;
-
-          &:hover {
-            color: $color-5;
-          }
-
-          &.dev {
-            color: $color-2;
-
-            &:hover {
-              color: $color-4;
-            }
-          }
+          margin-bottom: 0;
         }
       }
     }

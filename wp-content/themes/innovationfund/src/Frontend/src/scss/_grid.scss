@@ -20,19 +20,28 @@
   &_bottom {
     padding-bottom: 0;
     border-bottom: $border;
+
+    &-md {
+      @media #{$md} {
+        padding-bottom: 0;
+        border-bottom: $border;
+      }
+    }
   }
 
   &_btw {
-    & > div {
-      padding: 45px 0;
+    @media #{$lg} {
+      & > div {
+        padding: 45px 0;
 
-      &:first-child {
-        padding-right: 50px;
-      }
+        &:first-child {
+          padding-right: 50px;
+        }
 
-      &:not(:first-child) {
-        padding-left: 50px;
-        border-left: $border;
+        &:not(:first-child) {
+          padding-left: 50px;
+          border-left: $border;
+        }
       }
     }
   }

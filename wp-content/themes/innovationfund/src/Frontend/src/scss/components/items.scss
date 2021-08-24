@@ -73,6 +73,7 @@
     }
 
     &_rounded {
+      width: 190px;
       border-radius: 50%;
     }
   }
@@ -123,13 +124,218 @@
     margin-bottom: 0;
     padding: 36px 0;
     flex-direction: column;
+    @media #{$lg} {
+      padding: 36px 0;
+    }
 
     &:nth-child(odd) {
-      border-right: .75px solid $color-6;
+      @media #{$lg} {
+        border-right: .75px solid $color-6;
+      }
     }
 
     &:nth-child(even) {
-      padding-left: 26px;
+      @media #{$lg} {
+        padding-left: 26px;
+      }
+    }
+  }
+}
+
+.frame-block {
+  margin-top: 40px;
+  padding: 24px;
+  border: 2px solid $color-8;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    margin-bottom: $mb-base;
+  }
+
+  &__categories {
+    margin-bottom: 0;
+
+      li {
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &:before {
+          display: none;
+        }
+
+        &.current {
+          a {
+            color: $color-2;
+            font-weight: 500;
+          }
+        }
+
+        a {
+          color: $color-1;
+
+          &:hover {
+            margin-left: 10px;
+          }
+        }
+      }
+  }
+}
+
+.links-block {
+  margin-top: 32px;
+
+  a {
+    margin-right: 50px;
+    white-space: nowrap;
+  }
+}
+
+.roadmap {
+  table {
+    margin-left: 30px;
+
+    tr {
+      box-sizing: border-box;
+      width: 100%;
+
+      .roadmap__title {
+        font-size: $fs-lg;
+        font-weight: 700;
+        margin: 0 0 7px 8px;
+      }
+
+      .roadmap__text {
+        padding-bottom: 36px;
+        display: block;
+      }
+
+      &.roadmap__step {
+        &_1 {
+          th {
+            &:before {
+              content: url("/wp-content/themes/innovationfund/dist/img/step-1.svg")
+            }
+          }
+        }
+
+        &_2 {
+          th {
+            &:before {
+              content: url("/wp-content/themes/innovationfund/dist/img/step-2.svg")
+            }
+          }
+        }
+
+        &_3 {
+          th {
+            &:before {
+              content: url("/wp-content/themes/innovationfund/dist/img/step-3.svg")
+            }
+          }
+        }
+
+        &_4 {
+          th {
+            &:before {
+              content: url("/wp-content/themes/innovationfund/dist/img/step-4.svg")
+            }
+          }
+        }
+
+        &_5 {
+          th {
+            &:before {
+              content: url("/wp-content/themes/innovationfund/dist/img/step-5.svg")
+            }
+          }
+        }
+
+        &_6 {
+          th {
+            &:before {
+              content: url("/wp-content/themes/innovationfund/dist/img/step-6.svg")
+            }
+          }
+        }
+
+        &_7 {
+          th {
+            &:before {
+              content: url("/wp-content/themes/innovationfund/dist/img/step-7.svg")
+            }
+          }
+        }
+      }
+
+      &:last-child {
+        th {
+          &:after {
+            display: none;
+          }
+        }
+      }
+
+      th {
+        position: relative;
+        font-weight: $fw-base;
+
+        &:before {
+          position: absolute;
+          top: 4px;
+          left: -26px;
+          content: '';
+          width: 12px;
+          height: 12px;
+          border-radius: 10px;
+        }
+
+        &:after {
+          position: absolute;
+          top: 5px;
+          left: -20px;
+          content: '';
+          width: 1px;
+          height: 100%;
+          z-index: -1;
+        }
+      }
+
+      &.current, &.passed {
+        th {
+          &:before {
+            background-color: $color-8;
+          }
+        }
+      }
+
+      &.passed {
+        th {
+          &:after {
+            background-color: $color-8;
+          }
+        }
+      }
+
+      &.current, &.forthcome {
+        th {
+          &:after {
+            background-color: $color-9;
+          }
+        }
+      }
+
+      &.forthcome {
+        th {
+          &:before {
+            background-color: $color-9;
+          }
+        }
+      }
     }
   }
 }
