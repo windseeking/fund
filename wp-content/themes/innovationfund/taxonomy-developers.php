@@ -1,4 +1,4 @@
-<?php get_header() ?>
+<?php get_header(); ?>
 
     <section>
         <div class="container">
@@ -7,10 +7,12 @@
                     <div class="row">
                         <?php
 
-                        $posts = get_posts(array(
-                            'numberposts' => 0,
+                        $taxonomy = get_queried_object();
+                        $posts = query_posts(array(
+                            'developer' => $taxonomy->slug,
                             'post_type' => 'innovations',
-                            'suppress_filters' => true,
+                            'posts_per_page' => -1,
+                            'post_status' => 'publish'
                         ));
 
                         foreach ($posts as $post) {
@@ -44,25 +46,24 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-lg-3 order-1 order-lg-2">
+                <div class="col-12 col-lg-3 order-1 order-lg-2 mb-5 mb-lg-0">
                     <?php /*get_sidebar('innovations_sidebar') */ ?>
-
                     <?php
                     $terms = get_terms(array(
                         'taxonomy' => 'developers'
                     ));
                     ?>
 
-                    <div class="dropdown mobile mb-5">
+                    <div class="dropdown mobile">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="categories-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             Фильтр по разработчикам
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="categories-dropdown">
-                            <li class="current">
+                            <li>
                                 <a class="dropdown-item" href="/<?php echo pll_current_language() ?>/innovations/"><?php pll_e('Все') ?></a>
                             </li>
                             <?php foreach ($terms as $term): ?>
-                                <li>
+                                <li <?php echo $term->name == $taxonomy->name ? 'class="current"' : '' ?>>
                                     <a class="dropdown-item" href="<?php echo get_category_link($term->term_id) ?>">
                                         <?php echo $term->name ?>
                                     </a>
@@ -73,17 +74,18 @@
 
                     <div class="frame-block mt-0 desktop">
                         <h3>Фильтр по разработчикам</h3>
+
                         <ul class="frame-block__categories">
-                            <li class="current">
+                            <li>
                                 <a href="/<?php echo pll_current_language() ?>/innovations/"><?php pll_e('Все') ?></a>
                             </li>
-                            <?php foreach ($terms as $term): ?>
-                                <li>
-                                    <a href="<?php echo get_category_link($term->term_id) ?>">
-                                        <?php echo $term->name ?>
-                                    </a>
-                                </li>
-                            <?php endforeach; ?>
+                        <?php foreach ($terms as $term): ?>
+                            <li <?php echo $term->name == $taxonomy->name ? 'class="current"' : '' ?>>
+                                <a href="<?php echo get_category_link($term->term_id) ?>">
+                                    <?php echo $term->name ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
                         </ul>
                     </div>
                 </div>

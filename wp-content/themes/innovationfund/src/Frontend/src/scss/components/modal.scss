@@ -1,0 +1,45 @@
+.modal {
+  color: $color-1;
+
+  &-dialog {
+    @media (min-width: 576px) {
+      max-width: 50%;
+    }
+  }
+
+  &-content {
+    border-radius: 2px;
+  }
+
+  &-header {
+    padding: 18px 36px;
+  }
+
+  &-body {
+    padding: 36px;
+    text-align: left;
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    border: none;
+
+    &.btn-close {
+      background-image: url("../img/close.svg");
+      transition: .3s;
+
+      &:hover {
+        background-image: url("../img/close-hover.svg");
+        transition: .3s;
+      }
+    }
+  }
+}

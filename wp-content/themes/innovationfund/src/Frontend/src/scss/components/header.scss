@@ -1,7 +1,6 @@
 header {
-  position: relative;
-
   @media #{$lg} {
+    position: relative;
     margin: 0 60px;
   }
 
@@ -23,6 +22,9 @@ header {
 
   .header-top {
     padding: 18px 58px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: $fs-xxs;
     font-weight: 500;
     letter-spacing: .8px;
@@ -41,6 +43,14 @@ header {
         color: $color-2;
         line-height: $lh-lg;
       }
+    }
+  }
+
+  .header-lang {
+    select {
+      font-weight: 500;
+      border: none;
+      color: $color-4;
     }
   }
 
@@ -70,17 +80,26 @@ header {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    padding: 24px 58px;
+    padding: 10px 13.5px;
     background-color: $color-5;
 
+    @media #{$lg} {
+      padding: 24px 58px;
+    }
+
     &:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 1px;
-      background-color: rgba(0, 0, 0, .07);
+      display: none;
+
+      @media #{$lg} {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background-color: rgba(0, 0, 0, .07);
+      }
     }
 
     .header-logo {
@@ -88,8 +107,13 @@ header {
       width: 95px;
 
       &__img {
-        height: 35px;
-        width: auto;
+        height: auto;
+        width: 150px;
+
+        @media #{$lg} {
+          height: 35px;
+          width: auto
+        }
       }
     }
 
@@ -155,12 +179,18 @@ header {
 
   .header-banner {
     position: relative;
+    margin-top: -80px;
     height: 500px;
     padding: 80px 0 0 0;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 100% 100%;
     color: $color-5;
+    z-index: -1;
+    
+    @media #{$lg} {
+      margin-top: unset;
+    }
 
     + .header-bottom_home {
       top: -580px;
@@ -189,14 +219,23 @@ header {
   .header-text {
     position: absolute;
     box-sizing: border-box;
-    left: 115px;
+    left: 45px;
     bottom: 55px;
+
+    @media #{$lg} {
+      left: 115px;
+    }
 
     &__title {
       margin-bottom: $mb-base;
-      font-size: $fs-xxl;
+      font-size: $fs-xl;
       font-weight: 900;
-      width: 50%;
+      width: 70%;
+
+      @media #{$lg} {
+        width: 50%;
+        font-size: $fs-xxl;
+      }
     }
 
     &__paragraph {
@@ -205,7 +244,8 @@ header {
     }
   }
 
-  .navbar {
+  .navbar,
+  .modal-navbar {
     padding: 10px 0;
     background-color: $color-5;
 
@@ -240,6 +280,15 @@ header {
       }
     }
 
+    &-brand {
+      height: fit-content;
+      display: inline-block;
+
+      img {
+        width: 150px;
+      }
+    }
+
     &-toggler {
       margin-left: auto;
       display: block;
@@ -262,27 +311,55 @@ header {
         }
       }
     }
+
+    .header-lang {
+      width: fit-content;
+      margin: 45px auto 0;
+    }
+  }
+
+  .modal-navbar {
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background-color: transparent;
+
+    .modal-header {
+      padding: 25px;
+      border: none;
+    }
+
+    .header-menu {
+      padding-top: 0;
+    }
+
+    .header-contacts__item {
+      font-size: $fs-sm;
+    }
   }
 }
 
 .page-header {
+  margin: 0;
+  padding: 0 0 45px;
+  background-color: $color-5;
+  text-align: center;
   @media #{$lg} {
     margin: 0 60px;
   }
-  margin: 0;
-  padding: 80px 0 45px;
-  background-color: $color-5;
-  text-align: center;
 
   &__title {
     position: relative;
-    padding: 0 20px 40px;
+    padding: 60px 20px 40px;
+    margin: 0 auto;
+    width: 70%;
     font-weight: 700;
-    font-size: $fs-xl;
+    font-size: $fs-xl_mob;
     line-height: 45px;
     word-break: break-word;
     @media #{$lg} {
-      padding: 0 0 40px;
+      font-size: $fs-xl;
       word-break: unset;
     }
 
@@ -353,9 +430,14 @@ header {
       max-width: 100%;
       height: 35px;
       align-items: center;
-      justify-content: start;
+      justify-content: flex-start;
       white-space: nowrap;
       overflow-x: auto;
+
+      @media #{$md} {
+        justify-content: center;
+      }
+
       @media #{$lg} {
         justify-content: space-around;
         max-width: 70%;
@@ -369,6 +451,10 @@ header {
         margin: 0 12px;
         @media #{$lg} {
           margin-right: 0;
+        }
+
+        &:before {
+          display: none;
         }
 
         &:first-child {

@@ -53,7 +53,7 @@ Template Post Type: page
                             </div>
 
                             <?php if (get_field('link')): ?>
-                                <a href="<?php the_field('link'); ?>" class="link">Подробнее</a>
+                                <a href="<?php the_field('link'); ?>" class="link"><?php pll_e('Подробнее') ?></a>
                             <?php endif; ?>
                         </div>
                     </div>

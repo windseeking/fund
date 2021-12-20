@@ -8,10 +8,6 @@ $xxl: 'screen and (min-width: 1140px)';
 $serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $font-base: "GraphikLCG", $serif;
 
-@media screen and (max-width: 767px) {
-  $fs-base: 16px;
-}
-
 $fs-base: 18px;
 $fs-xxs: $fs-base * .6;
 $fs-xs: $fs-base * .75;
@@ -20,6 +16,9 @@ $fs-md: $fs-base * 1.125;
 $fs-lg: $fs-base * 1.5;
 $fs-xl: $fs-base * 2.25;
 $fs-xxl: $fs-base * 3;
+
+$fs-base_mob: 16px;
+$fs-xl_mob: 38px;
 
 $fw-base: 400;
 $fw-medium: 500;

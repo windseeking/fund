@@ -1,6 +1,6 @@
 <?php
-
-get_header(); ?>
+/* Template Name: Главная */
+get_header() ;?>
 
 <!-- о фонде -->
 <section class="section_narrow" id="about">
@@ -140,7 +140,7 @@ get_header(); ?>
 <!-- команда -->
 <section class="team section_narrow">
     <div class="container">
-    <h1 class="section-title section-title_accent"><?php the_field('team_title'); ?></h1>
+        <h1 class="section-title section-title_accent"><?php the_field('team_title'); ?></h1>
         <div class="row justify-content-around">
             <div class="col-12 col-md-4 mb-5 mb-lg-0">
                 <div class="team__item">
@@ -186,7 +186,7 @@ get_header(); ?>
 <!-- контакты -->
 <section class="contact section_narrow section_bg section_bg_light section_border_btw" id="contact">
     <div class="container">
-    <h1 class="section-title section-title_accent"><?php the_field('feedback_title'); ?></h1>
+        <h1 class="section-title section-title_accent"><?php the_field('feedback_title'); ?></h1>
         <div class="row justify-content-center mb-3 mb-lg-0">
             <div class="section__item col-12 col-lg-7 mb-5 mb-lg-0 order-2 order-lg-1">
                 <?php require 'template-parts/contact.php'; ?>

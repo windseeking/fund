@@ -1,68 +1,44 @@
-<?php
-
-/*
-Template Name: Страница новостей
-Template Post Type: page
-*/
-
-?>
-
 <?php get_header() ?>
 
-    <div class="full-width block-submenu">
-        <div class="inner">
-            <div class="page-title show-mobile">Новости</div>
-        </div>
-    </div>
-
-    <div class="full-width block-category-title ">
-        <div class="inner">
-            <div class="title">Новости</div>
-        </div>
-    </div>
-
-    <div class="full-width block-two-column page-news">
-        <div class="inner">
+    <section>
+        <div class="container">
             <div class="row justify-content-between">
-                    <div class="col-12 col-lg-9 order-2 order-lg-1">
-                        <div class="row">
+                <div class="col-12 col-lg-9 order-2 order-lg-1">
+                    <div class="row">
 
-                            <?php
+                        <?php
+                        if (have_posts()) {
+                            while (have_posts()) {
+                                the_post();
+                                ?>
 
-                            global $wp_query;
-
-                            $posts = get_posts($wp_query->query_vars);
-
-                            foreach ($posts as $post) {
-                                setup_postdata($post); ?>
-
-                                <article class="col-12 col-lg-6 mb-5">
-                                    <h3>
+                                <div class="card card_two-columns col-12 col-lg-6 p-lg-5">
+                                    <h2 class="card__title">
                                         <?php the_title() ?>
-                                    </h3>
+                                    </h2>
 
-                                    <div class="date"><?php the_field('date'); ?></div>
+                                    <div class="card__date">
+                                        <?php the_date(); ?>
+                                    </div>
 
-                                    <p>
+                                    <div class="card__text">
                                         <?php the_excerpt() ?>
-                                    </p>
+                                    </div>
 
-                                    <a href="<?php the_permalink(); ?>" class="link">Читать далее</a>
-                                </article>
+                                    <a href="<?php the_permalink(); ?>" class="card__button">Читать далее</a>
+                                </div>
                                 <?php
                             }
-                            wp_reset_postdata();
-                            ?>
-
-                        </div>
+                        }
+                        ?>
                     </div>
+                </div>
 
-                    <div class="col-12 col-lg-3 order-1 order-lg-2">
-                        <?php /*get_sidebar('news_sidebar') */?>
-                    </div>
+                <div class="col-12 col-lg-3 order-1 order-lg-2">
+                    <?php /*get_sidebar('news_sidebar') */ ?>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
+    </section>
 
 <?php get_footer() ?>

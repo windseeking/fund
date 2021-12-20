@@ -1,33 +1,18 @@
-<footer>
+</body>
+<footer class="footer">
     <div class="footer-top">
         <div class="footer-top__left">
-            <nav class="footer-nav">
-                <ul class="footer-list">
-                    <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link">Инновации</a>
-                    </li>
-                    <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link">Проекты</a>
-                    </li>
-                    <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link">Партнеры</a>
-                    </li>
-                    <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link">HR</a>
-                    </li>
-                    <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link">Новости</a>
-                    </li>
-                    <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link">R&D</a>
-                        <ul class="footer-list">
-                            <li><a href="">Продукты университета</a></li>
-                            <li><a href="">Научные направления</a></li>
-                            <li><a href="">Международное сотрудничество</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+
+            <?php
+            wp_nav_menu([
+                'theme_location' => 'footer-top',
+                'container' => 'nav',
+                'container_class' => 'footer-nav',
+                'menu_class' => 'footer-list',
+                'echo' => true,
+                'items_wrap' => '<ul class="%2$s">%3$s</ul>'
+            ]);
+            ?>
         </div>
 
         <div class="footer-top__right">
@@ -36,12 +21,32 @@
                 <a href="mailto:innovationfund@onu.edu.ua" class="footer-contacts__item">innovationfund@onu.edu.ua</a>
             </div>
 
-            <a href="" class="btn btn_outline_yellow">Поддержать фонд</a>
+            <a class="btn btn_outline_yellow footer-btn__support" data-bs-toggle="modal" data-bs-target="#modal-support">
+                <?php echo get_translation('Поддержать фонд', pll_current_language()); ?>
+            </a>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modal-support" tabindex="-1" aria-labelledby="modal-support" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title" id="exampleModalLabel"><?php echo get_translation('Поддержать ФПИ', pll_current_language()); ?></h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <?php
+                            $str = '<p>Вы можете поддержать наш Фонд <a href="https://send.monobank.com.ua/39XXQvurt" target="_blank">здесь</a>. Эти средства будут вложены в инновации, проекты и операционные расходы.</p><p>Вся информация о наших расходах будет представлена в соответствии с нашим принципом прозрачности.</p>';
+                            echo get_translation($str, pll_current_language());
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <ul class="footer-social footer-list">
                 <li class="footer-social__item">
                     <a href="https://www.facebook.com/innovationfund.in/"
-                       class="footer-social__link" target="_blank">
+                       class="footer-social__link" target="_blank" title="Facebook">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                              xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="20" height="20" x="0" y="0"
                              viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve"
@@ -54,7 +59,7 @@
                 </li>
                 <li class="footer-social__item">
                     <a href="https://www.linkedin.com/company/fund-of-innovation"
-                       class="footer-social__link">
+                       class="footer-social__link" target="_blank" title="LinkedIn">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                              xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="20" height="20" x="0" y="0"
                              viewBox="0 0 511 512" style="enable-background:new 0 0 512 512" xml:space="preserve"
@@ -73,7 +78,7 @@
                 </li>
                 <li class="footer-social__item">
                     <a href="https://www.instagram.com/innovationfund.in/"
-                       class="footer-social__link">
+                       class="footer-social__link" target="_blank" title="Instagram">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                              xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="20" height="20" x="0" y="0"
                              viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve"
@@ -95,30 +100,32 @@
     </div>
 
     <div class="footer-bottom">
-        <ul class="footer-links footer-list py-5">
-            <li class="footer-links__item">
-                <a class="footer-links__link" href="">Ознайомлювальний профіль Одеського національного університету</a></li>
-            <li class="footer-links__item">
-                <a class="footer-links__link" href="">Презентація Фонду Пiдтримки Iнновацiй</a></li>
-            <li class="footer-links__item">
-                <a class="footer-links__link" href="">Статут Одеського національного університету</a></li>
-            <li class="footer-links__item">
-                <a class="footer-links__link" href="">Статут Фонду Підтримки Iнновацій</a></li>
-        </ul>
+        <?php
+        wp_nav_menu([
+            'theme_location' => 'footer-bottom',
+            'container' => false,
+            'menu_class' => 'footer-links footer-list py-5',
+            'echo' => true,
+            'items_wrap' => '<ul class="%2$s">%3$s</ul>'
+        ]);
+        ?>
 
         <div class="footer-text pb-5">
-            Украина, Одесса<br>
-            © 2019 ОБЩЕСТВЕННАЯ ОРГАНИЗАЦИЯ «ФОНД ПОДДЕРЖКИ ИННОВАЦИЙ»<br>
-            Код: 42397930 Деятельность: 94.12 Деятельность профессиональных организаций Дата регистрации: 16.08.2018
+            <?php echo get_translation('Украина, Одесса', pll_current_language()); ?><br>
+            © 2019 <?php echo get_translation('ОБЩЕСТВЕННАЯ ОРГАНИЗАЦИЯ «ФОНД ПОДДЕРЖКИ ИННОВАЦИЙ»', pll_current_language()); ?><br>
+            <?php echo get_translation('Код: 42397930 Деятельность: 94.12 Деятельность профессиональных организаций Дата регистрации: 16.08.2018', pll_current_language()); ?>
         </div>
 
         <ul class="footer-links footer-list py-1">
-            <li class="footer-links__item">© 2018–2021 Все права защищены</li>
+            <li class="footer-links__item">© 2018–2021 <?php echo get_translation('Все права защищены', pll_current_language()); ?></li>
             <li class="footer-links__item">
-                <a href="" class="footer-links__link">Политика конфиденциальности</a></li>
+                <a href="<?php echo get_translation('http://innovationfund.in/ru/politika-konfidenczialnosti/', pll_current_language()); ?>" class="footer-links__link"><?php echo get_translation('Политика конфиденциальности', pll_current_language()); ?></a></li>
             <li class="footer-links__item">
-                <a href="" class="footer-links__link">Пользовательское соглашение</a></li>
-            <li class="footer-links__item">Разработка <a href="" class="footer-links__link_dev">windseeking</a></li>
+                <a href="<?php echo get_translation('http://innovationfund.in/ru/polzovatelskoe-soglashenie/', pll_current_language()); ?>" class="footer-links__link"><?php echo get_translation('Пользовательское соглашение', pll_current_language()); ?></a></li>
+            <li class="footer-links__item"><?php echo get_translation('Разработка', pll_current_language()); ?> <a href="https://demo-1em1nfpxews.ego.cards/" target="_blank" class="dev">windseeking</a></li>
         </ul>
     </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<?php wp_footer(); ?>
+</body>

@@ -22,6 +22,22 @@ let path = {
 /* ========================= */
 /* === Обработка стилей ==== */
 /* ========================= */
+gulp.task('sass:full', () => {
+    const options = {
+        outputStyle: 'extended',
+        precision: 10
+    };
+    return gulp.src(path.src_scss + '/main.scss')
+        .pipe(sassGlob())
+        .pipe(sourcemaps.init())
+        .pipe(sass(options).on('error', sass.logError))
+        .pipe(autoprefixer({
+            cascade: false
+        }))
+        .pipe(debug())
+        .pipe(gulp.dest(path.dist_css))
+});
+
 gulp.task('sass:minified', () => {
     const options = {
         outputStyle: 'compressed',
@@ -78,5 +94,5 @@ gulp.task('concat:js', () => {
 
 gulp.task(
     'build',
-    gulp.series(gulp.parallel('sass:minified', 'concat:css', 'babel:js', 'concat:js'))
+    gulp.series(gulp.parallel('sass:full', 'sass:minified', 'concat:css', 'babel:js', 'concat:js'))
 );

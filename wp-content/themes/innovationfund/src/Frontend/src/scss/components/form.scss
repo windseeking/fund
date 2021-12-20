@@ -15,6 +15,10 @@ form {
       border-color: $color-2;
       transition: .2s ease;
     }
+
+    &.invalid {
+      border-color: $color-7
+    }
   }
 
   label {
@@ -33,6 +37,32 @@ form {
   .btn {
     &:hover {
       color: $color-5;
+    }
+  }
+
+  span {
+    &.invalid {
+      font-size: $fs-xs;
+      color: $color-7
+    }
+  }
+
+  .message {
+    margin: 35px 0 0;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px 20px;
+
+    &-success {
+      border-color: #3da300;
+      color: #3da300;
+      background-color: #3da3001c;
+    }
+
+    &-error {
+      border-color: #e10000;
+      color: #e10000;
+      background-color: #e100000f;
     }
   }
 }
